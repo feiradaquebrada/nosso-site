@@ -1,0 +1,243 @@
+/* ==========================================
+ * RESET LOCAL — só afeta a página do mapa
+ * ========================================== */
+body.pagina-mapa * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.pagina-mapa {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+
+body.pagina-mapa {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.map-card-container {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.map-card-header {
+    background-color: #fff4e4;
+    color: #312719;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffe4bd;
+    flex-shrink: 0;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-title h3 {
+    color: #312719;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.badge-tag {
+    background-color: #ffe4bd;
+    color: #312719;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #f0f0f0;
+}
+
+.map-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.map-element {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.sidebar-empreendedores {
+    width: 360px;
+    background-color: #f8f9fa;
+    border-left: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.sidebar-header {
+    padding: 14px 16px;
+    background-color: #efefef;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header h4 {
+    font-size: 14px;
+    color: #312719;
+    margin: 0;
+}
+
+.sidebar-header small {
+    font-size: 11px;
+    color: #666;
+}
+
+.lista-cards {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-empreendedor {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-empreendedor:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: #d8c2a7;
+}
+
+.card-header-estab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.logo-estab-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.estab-info-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.estab-info-titulo h5 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.badge-distancia {
+    font-size: 10px;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.card-empreendedor p {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.btn-whats {
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.btn-whats:hover {
+    background: #1eb954;
+}
+
+.map-card-footer {
+    background-color: #fff4e4;
+    padding: 8px 16px;
+    border-top: 1px solid #edf2f7;
+    text-align: center;
+    color: #555555;
+    flex-shrink: 0;
+}
+@media (max-width: 768px) {
+    .map-wrapper {
+        flex-direction: column;
+    }
+    .map-element {
+        height: 60%;
+        width: 100%;
+    }
+    .sidebar-empreendedores {
+        width: 100%;
+        height: 40%;
+        border-left: none;
+        border-top: 2px solid #ddd;
+    }
+
+    .badge-tag {
+        display: none; 
+    }
+    .header-title h3 {
+        font-size: 15px;
+    }
+}

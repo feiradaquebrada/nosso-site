@@ -1,0 +1,260 @@
+/* =======================================================================
+ * ESTILOS DA PÁGINA SOBRE NÓS (styles/sobre.css)
+ * ======================================================================= */
+
+/* ==========================================
+ * 1. SEÇÃO HERO SOBRE NÓS
+ * ========================================== */
+.hero-sobre {
+    padding: 140px 2.5rem 5rem;
+    background-color: var(--cor-fundo-creme);
+}
+
+.hero-sobre-container {
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+    background-color: var(--cor-card-bege);
+    border-radius: var(--raio-borda-padrao);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.selo-projeto {
+    display: inline-block;
+    background-color: var(--cor-bege-destaque);
+    color: var(--cor-texto-primario);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+}
+
+.hero-sobre-texto h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    color: var(--cor-texto-primario);
+    margin-bottom: 1.25rem;
+}
+
+.hero-sobre-texto p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1rem;
+}
+
+.hero-sobre-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.hero-sobre-imagem img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: var(--raio-borda-padrao);
+}
+
+/* ==========================================
+ * 2. SEÇÃO NOSSA EQUIPE (FOTINHAS E NOMES)
+ * ========================================== */
+.secao-equipe {
+    padding: 4rem 2.5rem 5rem;
+    background-color: var(--cor-fundo-creme);
+}
+
+.equipe-container {
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+}
+
+.equipe-cabecalho {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.equipe-cabecalho h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--cor-texto-primario);
+    margin-bottom: 0.5rem;
+}
+
+.equipe-cabecalho p {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+.equipe-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.integrante-card {
+    background-color: var(--cor-card-bege);
+    padding: 2rem 1.25rem;
+    border-radius: var(--raio-borda-padrao);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.integrante-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.integrante-foto {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--cor-bege-destaque);
+    background-color: var(--cor-fundo-creme);
+}
+
+.integrante-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.integrante-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cor-texto-primario);
+    margin-bottom: 0.25rem;
+}
+
+.integrante-card span {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    opacity: 0.8;
+}
+
+/* ==========================================
+ * 3. SEÇÃO DE CONTATO E CHAMADA PARA AÇÃO
+ * ========================================== */
+.secao-contato-cta {
+    padding: 2rem 2.5rem 6rem;
+    background-color: var(--cor-fundo-creme);
+}
+
+.contato-cta-container {
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.cta-card,
+.contato-card {
+    padding: 2.5rem;
+    border-radius: var(--raio-borda-padrao);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-card {
+    background-color: var(--cor-bege-destaque);
+}
+
+.cta-card h2 {
+    font-size: 1.85rem;
+    color: var(--cor-texto-primario);
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.75rem;
+}
+
+.btn-cta-cadastro {
+    align-self: flex-start;
+    display: inline-block;
+    background-color: var(--cor-texto-primario);
+    color: var(--cor-fundo-creme) !important;
+    padding: 0.9rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.btn-cta-cadastro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(49, 39, 25, 0.22);
+}
+
+.contato-card {
+    background-color: var(--cor-card-bege);
+}
+
+.contato-card h3 {
+    font-size: 1.4rem;
+    color: var(--cor-texto-primario);
+    margin-bottom: 0.75rem;
+}
+
+.contato-card p {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.25rem;
+}
+
+.contato-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contato-lista li {
+    font-size: 0.95rem;
+    color: var(--cor-texto-primario);
+}
+
+.contato-lista a {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* ==========================================
+ * 4. RESPONSIVIDADE (CELULAR E TABLET)
+ * ========================================== */
+@media (max-width: 900px) {
+    .hero-sobre {
+        padding: 120px 1.25rem 3rem;
+    }
+
+    .hero-sobre-container,
+    .contato-cta-container {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+    }
+
+    .secao-equipe,
+    .secao-contato-cta {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .equipe-lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn-cta-cadastro {
+        width: 100%;
+        text-align: center;
+    }
+}

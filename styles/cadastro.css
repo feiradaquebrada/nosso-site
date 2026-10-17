@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body{
+    background-color: #FFF4E4;
+    min-height: 100vh;
+    overflow: hidden; 
+}
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.form-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff4e4;
+    overflow-y: auto; 
+    padding: 10px;
+}
+
+.card {
+    background-color: #FFE4BD;
+    width: 360px;
+    padding: 24px 30px; 
+    border-radius: 10px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo do Botão Fechar  */
+.btn-fechar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-fechar:hover {
+    background-color: rgba(220, 38, 38, 0.2);
+    color: #dc2626;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.logo img {
+    width: 160px; 
+}
+
+.subtitulo{
+    font-size: 20px; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.usuario {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.btn-perfil {
+    flex: 1;
+    padding: 6px 0;
+    background-color: transparent;
+    border: 1.5px solid #312719;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #312719;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-perfil.ativo {
+    background-color: #EEC994;
+    color: #ffffff;
+    border-color: #312719;
+}
+
+form{
+    width: 100%;
+}
+
+.input-group{
+    margin-bottom: 8px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label{
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.input-group small {
+    font-size: 8.5px;
+    margin-top: 2px;
+}
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 6px 10px 6px 32px; 
+    border: 1px solid #666;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 12px;
+}
+.input-box input::placeholder{
+    color: #b3a58e;
+}
+.input-box img {
+    position: absolute;
+    left: 10px;
+    width: 15px;
+}
+.input-box input:focus{
+    border-color: #000;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #d4be95;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.btn-submit{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 8px; 
+    background-color: #edd19c;
+    border: 1px solid #c8b082;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.login-link{
+    text-align: center;
+    font-size: 10px;
+    color: #000;
+    margin-top: 8px;
+}
+.login-link a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login-link a:hover{
+    text-decoration: underline;
+}
+.form-empreendedor{
+    display: none;
+}
+@media (max-width: 900px) {
+
+    .image-container {
+        width: 40%;
+    }
+
+    .form-wrapper {
+        width: 60%;
+    }
+
+}
+@media (max-width: 640px) {
+
+    .image-container {
+        display: none;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+}

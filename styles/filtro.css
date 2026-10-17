@@ -1,0 +1,234 @@
+/* =======================================================================
+ * ESTILOS DA PÁGINA DE RESULTADOS (FILTRO DE BUSCA)
+ * ======================================================================= */
+
+/* ==========================================
+ * 1. CONFIGURAÇÕES GLOBAIS
+ * ========================================== */
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* ==========================================
+ * 2. LAYOUT PRINCIPAL (DIVISÃO TELA)
+ * ========================================== */
+.pagina-resultados {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    align-items: flex-start;
+}
+
+/* ==========================================
+ * 3. BARRA LATERAL (MENU DE FILTROS)
+ * ========================================== */
+.filtros {
+    flex: 0 0 280px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #FFF4E4;
+    box-shadow: 0 4px 12px #00000015;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtros label {
+    margin-bottom: 5px;
+}
+
+.filtros input, 
+.filtros select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #00000030;
+}
+
+.aplica-filtro {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFE4BD;
+    color: #312719;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.aplica-filtro:active {
+    transform: scale(0.96);
+}
+
+.filtro-categoria {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+ * 4. ÁREA DE RESULTADOS (TOPO E GRID)
+ * ========================================== */
+.resultados {
+    flex: 1;
+    min-width: 0;
+}
+
+.topo-resultados {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ordenacao {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ordenacao select {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #00000030;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ==========================================
+ * 5. ESTILIZAÇÃO DO CARD DO ESTABELECIMENTO
+ * ========================================== */
+.card-resultados{
+    box-shadow: 0 4px 12px #00000015;
+    border-radius: 20px;
+    position: relative;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.card-resultados > img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* Arredonda apenas o topo da imagem para casar com o card */
+    object-position: center 40%;
+}
+
+/* Badges flutuantes sobre a imagem */
+.top-categorias {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FFE4BD;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.top-favoritos {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: #FFE4BD;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.top-favoritos .estrela {
+    color: #777;
+    font-size: 20px;
+}
+
+.top-favoritos.ativo .estrela {
+    color: #000;
+}
+.localizacao{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.localizacao img {
+    width: 20px;
+    height: auto;
+    margin: 6px;
+}
+.conteudo-card{
+    padding: 10px;
+}
+.ver-detalhes{
+width: 100%;
+padding: 12px;
+border-radius: 10px;
+border: none;
+background-color: #FFE4BD;
+color: #312719;
+cursor: pointer;
+}
+.ver-detalhes:active{
+    transform: scale(0.98);
+}
+.informacoes h3{
+    margin: 0;
+    margin-bottom: 8px;
+}
+.informacoes p{
+    margin: 0;
+    margin-bottom: 12px;
+}
+#mensagem-favorito {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #312719;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #00000030;
+    z-index: 1000;
+    display: none;
+}
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filtros {
+        flex: 0 0 220px;
+    }
+}
+@media (max-width: 640px) {
+    .pagina-resultados {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .filtros {
+        width: 100%;
+        flex: auto;
+        box-sizing: border-box;
+    }
+
+    .resultados {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .topo-resultados {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

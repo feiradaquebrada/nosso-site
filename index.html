@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ========================================== -->
+    <!-- METADADOS E CONFIGURAÇÕES GLOBAIS          -->
+    <!-- ========================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feira de Quebrada | Comércios e serviços locais do seu bairro</title>
+    <meta name="description" content="Descubra comércios, profissionais e serviços locais perto de você na Feira de Quebrada, a plataforma que conecta moradores e pequenos empreendedores do Brasil.">
+
+    <!-- ========================================== -->
+    <!-- OPEN GRAPH (COMPARTILHAMENTO EM REDES)     -->
+    <!-- ========================================== -->
+    <meta property="og:title" content="Feira de Quebrada">
+    <meta property="og:description" content="A plataforma que conecta moradores aos comércios e serviços locais do seu bairro.">
+    <meta property="og:image" content="imagens/capa1.jpeg">
+    <meta property="og:type" content="website">
+
+    <!-- ========================================== -->
+    <!-- FONTES EXTERNAS                            -->
+    <!-- ========================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+
+    <!-- ========================================== -->
+    <!-- ESTILOS (CSS)                              -->
+    <!-- ========================================== -->
+    <link rel="stylesheet" href="styles/styleinicio.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/mapa.css">
+    
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS (JS)                               -->
+    <!-- ========================================== -->
+    <!-- O script principal da página inicial deve ser carregado como módulo para rodar o Firebase -->
+    <script type="module" src="/scripts/inicio.js" defer></script>
+    <script src="scripts/chat.js" defer></script>
+    <script src="scripts/mapa.js" defer></script>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO PRINCIPAL E NAVEGAÇÃO            -->
+    <!-- ========================================== -->
+    <header class="cabecalho-principal">
+        <a href="index.html" class="logo">
+            <img src="imagens/logo.png" alt="Logo da Feira de Quebrada">
+        </a>
+
+        <!-- Botão do menu sanduíche (visível apenas no celular) -->
+        <button id="btn-menu-mobile" class="btn-menu-mobile" aria-label="Abrir menu">☰</button>
+
+        <!-- Overlay escuro que fica atrás do menu -->
+        <div id="overlay-menu" class="overlay-menu"></div>
+
+        <!-- Container do menu lateral (Off-canvas) -->
+        <div id="menu-colapsavel" class="menu-colapsavel">
+            
+            <!-- Botão Fechar (X) -->
+            <button id="btn-fechar-menu" class="btn-fechar-menu" aria-label="Fechar menu">✕</button>
+
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    
+                    <li class="menu-dropdown">
+                        <a href="#" id="btn-categorias" aria-expanded="false" aria-controls="lista-categorias">Categorias ▾</a>
+                        <ul id="lista-categorias" class="dropdown-balao escondido">
+                            <li><a href="pages/filtro.html?categoria=alimentacao">Alimentação</a></li>
+                            <li><a href="pages/filtro.html?categoria=artesanato">Arte e Artesanato</a></li>
+                            <li><a href="pages/filtro.html?categoria=beleza">Beleza e Cuidados</a></li>
+                            <li><a href="pages/filtro.html?categoria=servico-tecnico">Serviços</a></li>
+                            <li><a href="pages/filtro.html?categoria=costura">Moda e Costura</a></li>
+                            <li><a href="pages/filtro.html?categoria=festas">Festas</a></li>
+                            <li><a href="pages/filtro.html?categoria=fretes">Fretes</a></li>
+                            <li><a href="pages/filtro.html?categoria=tatuagem">Tatuagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <search>
+                <form role="search">
+                    <input type="search" placeholder="O que busca?" aria-label="Buscar produtos ou serviços">
+                    <button type="submit">Buscar</button>
+                </form>
+            </search>
+
+            <!-- CONTÊINER DE AUTENTICAÇÃO COM O ID CORRETO -->
+            <nav class="auth-acoes" aria-label="Acesso à conta" id="containerAuth">
+                <a href="pages/cadastro.html" class="btn-link">Cadastro</a>
+                <a href="pages/login.html" class="btn-link">Login</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA               -->
+    <!-- ========================================== -->
+    <main>
+
+        <!-- Seção 1: Carrossel Hero -->
+        <section class="hero-carrossel">
+            <div class="carrossel-slides">
+                <article class="slide">
+                    <img src="imagens/rua.jpg" alt="Banner com caixotes coloridos de bebidas" fetchpriority="high">
+                </article>
+                <article class="slide">
+                    <img src="imagens/capa2.jpg" alt="Banner mostrando uma rua com bandeirinhas do Brasil" loading="lazy">
+                </article>
+                <article class="slide">
+                    <img src="imagens/capa3.jpg" alt="Banner mostrando a vista aérea do calçadão da praia de Copacabana" loading="lazy">
+                </article>
+            </div>
+
+            <div class="hero-conteudo">
+                <h1>Aqui o seu comércio voa</h1>
+                <img src="imagens/altocreme.png" alt="Símbolo Alto" class="titulo-destaque-img">
+
+                <p>
+                    Sonhe alto e faça seu comércio local crescer rapidamente na Feira de Quebrada.
+                    A melhor plataforma de comércio do Brasil.
+                </p>
+
+                <div class="hero-botoes">
+                    <!-- Links atualizados para a pasta pages/ -->
+                    <a href="pages/anunciar.html" class="btn-primario">Comece agora</a>
+                    <a href="pages/contato.html" class="btn-secundario">Conheça o projeto</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Galeria de Profissões (Carrossel contínuo) -->
+        <section class="secao-profissoes" aria-labelledby="titulo-profissoes">
+            <div class="profissoes-container">
+                <header class="profissoes-cabecalho">
+                    <h2 id="titulo-profissoes">
+                        Descubra quem faz acontecer<br>na sua quebrada.
+                    </h2>
+                    <p>
+                        Conheça algumas das profissões mais registradas e
+                        procuradas na <em>Feira da Quebrada</em>.
+                    </p>
+                </header>
+            </div>
+
+            <!-- Faixa de fotos que roda sozinha (o JS duplica os itens para o loop infinito) -->
+            <div class="profissoes-carrossel" id="carrossel-profissoes">
+                <ul class="profissoes-galeria" role="list">
+                    <li class="galeria-item">
+                        <figure>
+                            <img src="imagens/trancista.jpg" alt="Profissional trancista fazendo tranças nagô" loading="lazy">
+                        </figure>
+                    </li>
+                    <li class="galeria-item">
+                        <figure>
+                            <img src="imagens/costureira.jpg" alt="Costureira trabalhando em máquina manual" loading="lazy">
+                        </figure>
+                    </li>
+                    <li class="galeria-item">
+                        <figure>
+                            <img src="imagens/sobrancelha.jpg" alt="Profissional realizando alinhamento de sobrancelhas" loading="lazy">
+                        </figure>
+                    </li>
+                    <li class="galeria-item">
+                        <figure>
+                            <img src="imagens/tatuador.jpg" alt="Tatuador aplicando tatuagem" loading="lazy">
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção 3: Categorias Populares -->
+        <section class="secao-categorias" aria-labelledby="titulo-categorias">
+            <div class="categorias-container">
+                <header class="categorias-cabecalho">
+                    <h2 id="titulo-categorias">Categorias Populares</h2>
+                    <p>Navegue pelos estabelecimentos mais buscados da nossa plataforma.</p>
+                </header>
+                <ul class="categorias-lista" role="list">
+                    <!-- Links atualizados para a pasta pages/ e ícones para a pasta icones/ -->
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=beleza">
+                            <img src="icones/iconemanicure.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Beleza e Cuidados</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=artesanato">
+                            <img src="icones/iconeartesanato.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Arte e Artesanato</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=alimentacao">
+                            <img src="icones/iconealimentacao.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Alimentação</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=costura">
+                            <img src="icones/iconecostura.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Moda e Costura</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=tatuagem">
+                            <img src="icones/iconetatuagem.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Tatuagem</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                    <li class="categoria-card">
+                        <a href="pages/filtro.html?categoria=servico-tecnico">
+                            <img src="icones/iconeservico-tecnico.png" alt="" aria-hidden="true" width="48" height="48">
+                            <h3>Serviços</h3>
+                            <span>Explorar agora</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção 4: Institucional (Sobre Nós)  -->
+        <section id="sobre" class="secao-sobre" aria-labelledby="titulo-sobre">
+            <div class="sobre-container">
+                <figure class="sobre-foto">
+                    <img src="imagens/beco.jpg" alt="Beco com a bandeira do Brasil">
+                </figure>
+                <article class="sobre-texto">
+                    <h2 id="titulo-sobre">Sobre Nós</h2>
+                    <p>A <strong>Feira de Quebrada</strong> nasceu para valorizar quem faz a nossa comunidade acontecer. Criamos este espaço para dar visibilidade a pequenos empreendedores e aproximar pessoas dos produtos e serviços produzidos dentro de suas próprias comunidades.</p>
+                    <p>Acreditamos na força da cultura local, da criatividade e do empreendedorismo brasileiro. Apoiar um negócio local é também valorizar histórias, talentos e sonhos.</p>
+                    <p>Porque fortalecer o pequeno empreendedor é fortalecer a quebrada. <em>Aqui, a gente valoriza quem faz.</em></p>
+
+                    <div class="sobre-acoes">
+                        <a href="pages/sobre.html" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção 5: Dados Estatísticos -->
+        <div class="container-dados">
+            <section class="dados">
+                <div class="contas">
+                    <div class="icone-bg">
+                        <img src="/icones/pessoas.png" alt="Ícone de Contas Alcançadas">
+                    </div>
+                    <h3>+4 mil</h3>
+                    <p>Contas alcançadas</p>
+                </div>
+                <div class="contas">
+                    <div class="icone-bg">
+                        <img src="/icones/comprar.png" alt="Ícone de Comércios">
+                    </div>
+                    <h3>+500</h3>
+                    <p>Comércios cadastrados</p>
+                </div>
+                <div class="contas">
+                    <div class="icone-bg">
+                        <img src="/icones/lupa.png" alt="Ícone de Buscas">
+                    </div>
+                    <h3>+2 mil</h3>
+                    <p>Negócios descobertos</p>
+                </div>
+                <div class="contas">
+                    <div class="icone-bg">
+                        <img src="/icones/aperto.png" alt="Ícone de Conexões">
+                    </div>
+                    <h3>+1 mil</h3>
+                    <p>Conexões realizadas</p>
+                </div>
+            </section>
+        </div>
+
+<!-- Seção 6: Depoimentos (Quem vive, recomenda) -->
+<section class="coment">
+    <div class="headerdepoimentos">
+        <h2>Quem vive, recomenda</h2>
+        <p>Histórias reais de quem já passou por aqui.</p>
+    </div>
+
+    <div class="card-container">
+        <!--Coment1-->
+        <article class="card">
+            <div class="avatar-container">
+                <img src="../imagens/tatuadorcoment.png" alt="Tatuador" class="avatar">
+            </div>
+            <blockquote class="quote">
+                "A Feira da Quebrada me ajudou a mostrar meu trabalho para pessoas que ainda não conheciam meu estúdio. É muito bom ter um espaço para divulgar meu trabalho e fazer meu negócio chegar mais longe."
+            </blockquote>
+            <p class="autor"> Marcel Souza, Tatuador</p>
+        </article>
+
+        <!--Coment2-->
+        <article class="card">
+            <div class="avatar-container">
+                <img src="../imagens/costureiracoment.png" alt="Costureira" class="avatar">
+            </div>
+            <blockquote class="quote">
+                "Trabalho com costura há muitos anos e sempre achei difícil divulgar meus serviços pela internet. Com a Feira da Quebrada, ficou mais fácil mostrar o que faço e ser encontrada por pessoas da minha região."
+            </blockquote>
+            <p class="autor"> Silvana Gonçalves, Costureira</p>
+        </article>
+
+        <!--Coment3-->
+        <article class="card">
+            <div class="avatar-container">
+                <img src="../imagens/cabeleireiracoment.png" alt="Cabeleireira" class="avatar">
+            </div>
+            <blockquote class="quote">
+                "Adorei poder colocar meu trabalho em um lugar onde as pessoas realmente procuram serviços da região. Já conheci clientes novos através da plataforma e também descobri outros negócios incríveis perto de mim."
+            </blockquote>
+            <p class="autor"> Thaina Silva, Cabeleireira</p>
+        </article>
+    </div>
+</section>
+
+        <!-- Seção 7: Mapa Interativo -->
+        <section class="secao-mapa" aria-labelledby="titulo-mapa">
+            <div class="mapa-card">
+                <div class="mapa-icone">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <h2 id="titulo-mapa">Mapa Interativo</h2>
+                <p>A integração com o mapa de estabelecimentos ficará aqui. Os usuários poderão arrastar, dar zoom e ver os estabelecimentos com seus respectivos pins e fotos.</p>
+                <!-- Link corrigido para a pasta pages/ -->
+                <a href="pages/mapa.html" class="btn-mapa">Explorar mapa</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= CHATBOT ================= -->
+    <div class="chat-wrapper" id="chatWrapper">
+    
+    <div class="widget hidden" id="chatWidget">
+        <div class="header">
+        <div class="persona-info">
+            <div class="avatar-header">
+            <img src="imagens/fey.png" alt="Jessica Avatar">
+            <span class="online-dot"></span>
+            </div>
+            <div class="persona-details">
+            <span class="persona-nome">Fey</span>
+            <span class="persona-status">Atendimento • </span>
+            </div>
+        </div>
+        <button id="closeChat" class="close-btn" aria-label="Fechar Chat">&times;</button>
+        </div>
+
+        <div class="chat" id="chatBox"></div>
+
+        <div class="composer">
+        <input class="message" type="text" placeholder="Digite uma mensagem..." id="chatInput">
+        <button class="submit_message" id="submitBtn" aria-label="Enviar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+        </div>
+    </div>
+
+    <button id="chatToggle" class="chat-toggle-btn" aria-label="Abrir Chat">
+    
+    <div class="chat-help-tooltip" id="chatHelpTooltip">
+        <span>Precisa de ajuda? 💬</span>
+    </div>
+
+    <div class="avatar-toggle">
+        <img src="imagens/fey.png" alt="Jessica">
+        <span class="status-indicator"></span>
+    </div>
+    </button>
+
+    </div>
+
+    <!-- Rodapé: identidade da marca, redes sociais e informações legais -->
+    <footer class="rodape-principal">
+        <div class="rodape-container">
+
+            <div class="rodape-marca">
+                <a href="inicio.html" class="rodape-logo-link">
+                    <img src="imagens/logo.png" alt="Feira de Quebrada" width="140" height="auto">
+                </a>
+                <p>
+                    A maior plataforma de conexão entre moradores e comércios locais do Brasil.
+                    Descubra o que há de melhor no seu bairro e voe alto conosco.
+                </p>
+
+                <nav class="rodape-redes" aria-label="Redes sociais e contato externo">
+                    <ul role="list">
+                        <li>
+                            <a href="https://www.instagram.com/feiradaquebrada" target="_blank" rel="noopener noreferrer" aria-label="Acessar nosso perfil no Instagram">
+                                <img src="icones/iconeinstagram.png" alt="" aria-hidden="true" width="24" height="24">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:feiradaquebrada@gmail.com" aria-label="Nos envie um email">
+                                <img src="icones/iconerede.png" alt="" aria-hidden="true" width="24" height="24">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="rodape-copyright">
+            <p>
+                <small>&copy; 2026 Feira de Quebrada. Todos os direitos reservados.</small>
+            </p>
+        </div>
+    </footer>
+
+<!-- ========================================== -->
+<!-- VLibras e UserWay  Acessibilidade          -->
+<!-- ========================================== -->
+
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<!-- UserWay -->
+<script src="https://cdn.userway.org/widget.js" data-account="a1B2c3D4e5"></script>
+
+<!-- Aqui ajusta o CSS do UserWay para ficar em acima do VLibras -->
+<style>
+    .userway-widget-btn,
+    #userwayAccessibilityIcon,
+    body .uaw-widget-btn {
+        position: fixed !important;
+        right: 2px !important;
+        left: auto !important;
+        bottom: -230px !important; 
+        top: auto !important;
+        z-index: 999999 !important;
+    }
+    
+</style>
+</body>
+</html>
