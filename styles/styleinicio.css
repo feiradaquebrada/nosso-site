@@ -13,10 +13,10 @@
 
     /* Paleta de cores */
     --cor-fundo-creme: #FFF4E4;
-    --cor-card-bege: #FFEDD5;
-    --cor-texto-primario: #312719;
-    --cor-texto-secundario: #312719;
-    --cor-bege-destaque: #FFE4BD;
+    --cor-card: #FFE4BD;
+    --cor-texto: #312719;
+    --cor-secao: #FFEDD5;
+    --cor-mapa: #E7CEA9;
     --cor-branco-puro: #f1f1f1;
 
     /* Medidas */
@@ -43,7 +43,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: var(--cor-texto-primario);
-    background-color: var(--cor-branco-puro);
+    background-color: var(--cor-fundo-creme);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -685,7 +685,7 @@ header.cabecalho-principal form[role="search"] button {
  * ========================================== */
 .secao-categorias {
     padding: 5rem 2.5rem;
-    background-color: var(--cor-fundo-creme);
+    background-color: var(#FFEDD5);
 }
 
 .categorias-container {
@@ -809,7 +809,7 @@ header.cabecalho-principal form[role="search"] button {
     max-width: 1100px;
     margin: 40px auto;
     padding: 40px 30px;
-    background-color: #FFF3E4; 
+    background-color: #FFEDD5; 
     border-radius: 12px;
 }
 
@@ -833,7 +833,7 @@ header.cabecalho-principal form[role="search"] button {
 .icone-bg {
     width: 65px;
     height: 65px;
-    background-color: #FFEDD5; 
+    background-color: #FFE4BD; 
     border-radius: 50%;
     display: flex;
     align-items: center;
