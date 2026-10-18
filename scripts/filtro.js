@@ -28,10 +28,78 @@ let listaComerciosOriginal = [];
 let parametros = new URLSearchParams(window.location.search);
 let categoriaUrl = parametros.get("categoria");
 
-if (categoriaUrl && Array.from(seletorCategoria.options).some(function(opcao) {
-    return opcao.value.toLowerCase() === categoriaUrl.toLowerCase();
-})) {
-    seletorCategoria.value = categoriaUrl.toLowerCase();
+let buscaUrl = parametros.get("busca");
+
+// ==========================================
+// AUXILIARES (busca, categorias e segurança)
+// ==========================================
+let BASE = "../";
+
+// Cada filtro do menu agrupa várias categorias cadastradas no painel
+let GRUPOS_CATEGORIA = {
+    alimentacao: ["alimenta", "confeitaria", "salgados", "cozinha", "acai"],
+    beleza: ["beleza", "cabelo", "barbearia", "unhas", "cilios", "estetica", "maquiagem"],
+    tatuagem: ["tatuagem", "piercing"],
+    costura: ["moda", "brecho", "costura"],
+    artesanato: ["artesanato", "acessorios"],
+    servicos: ["servico", "costura", "manutencao", "reformas", "limpeza", "eventos", "fotografia", "aulas", "reforco"],
+    outros: ["outros"]
+};
+
+// Links antigos do menu da página inicial continuam funcionando
+let APELIDOS_CATEGORIA = {
+    "servico-tecnico": "servicos",
+    "festas": "servicos",
+    "fretes": "servicos",
+    "manicure": "beleza",
+    "cabelo": "beleza"
+};
+
+function escapar(texto) {
+    return String(texto === undefined || texto === null ? "" : texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function normalizarTexto(texto) {
+    if (!texto) return "";
+    return String(texto).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+}
+
+function resolverCategoria(valor) {
+    let chave = normalizarTexto(valor);
+    return APELIDOS_CATEGORIA[chave] || chave;
+}
+
+function categoriaCorresponde(categoriaDoComercio, filtro) {
+    if (!filtro || filtro === "todas") return true;
+    let cat = normalizarTexto(String(categoriaDoComercio || "").replace(/["']/g, ""));
+    if (!cat) return false;
+    let palavras = GRUPOS_CATEGORIA[filtro];
+    if (!palavras) return cat.includes(filtro);
+    return palavras.some(function(p) { return cat.includes(p); });
+}
+
+// Todas as palavras digitadas precisam aparecer em nome, descrição, categoria ou bairro
+function buscaCorresponde(textoBusca, campos) {
+    let palavras = normalizarTexto(textoBusca).split(/\s+/).filter(Boolean);
+    if (palavras.length === 0) return true;
+    let palheiro = normalizarTexto(campos.join(" "));
+    return palavras.every(function(p) { return palheiro.includes(p); });
+}
+
+if (categoriaUrl && seletorCategoria) {
+    let categoriaResolvida = resolverCategoria(categoriaUrl);
+    if (Array.from(seletorCategoria.options).some(function(opcao) { return opcao.value === categoriaResolvida; })) {
+        seletorCategoria.value = categoriaResolvida;
+    }
+}
+
+if (buscaUrl && campoBusca) {
+    campoBusca.value = buscaUrl.trim().slice(0, 100);
 }
 
 function carregarFavoritosSalvos() {
@@ -125,7 +193,7 @@ function exibirCards(comercios) {
         
         if (!nome || nome.trim() === "" || nome === "-") return;
 
-        let fotoPrincipal = "imagens/trancista.png";
+        let fotoPrincipal = BASE + "imagens/trancista.png";
         if (comercio.logo && comercio.logo.trim() !== "" && comercio.logo !== "-") {
             fotoPrincipal = comercio.logo;
         } else if (comercio.fotoUrl && comercio.fotoUrl.trim() !== "" && comercio.fotoUrl !== "-") {
@@ -151,22 +219,22 @@ function exibirCards(comercios) {
         card.setAttribute("data-categoria", categoria.toLowerCase());
 
         card.innerHTML = `
-            <img src="${fotoPrincipal}" alt="${nome}" onerror="this.src='imagens/trancista.png'">
-            <span class="top-categorias">${categoria}</span>
-            <button type="button" class="top-favoritos" data-id="${idUnico}" aria-pressed="false">
+            <img src="${escapar(fotoPrincipal)}" alt="${escapar(nome)}" onerror="this.onerror=null;this.src='${BASE}imagens/trancista.png'">
+            <span class="top-categorias">${escapar(categoria)}</span>
+            <button type="button" class="top-favoritos" data-id="${escapar(idUnico)}" aria-pressed="false">
                 <span class="estrela">☆</span> Destaque
             </button>
 
             <div class="conteudo-card">
                 <div class="informacoes">
                     <div class="localizacao">
-                        <img src="icones/iconemarcador.png" alt="Marcador">
-                        <span class="bairro">${bairro}</span>
+                        <img src="${BASE}icones/iconemarcador.png" alt="Marcador">
+                        <span class="bairro">${escapar(bairro)}</span>
                     </div>
 
-                    <h3>${nome}</h3>
-                    <p class="info-extra"><strong>Tel/Zap:</strong> ${telefone}</p>
-                    <p class="descricao-card">${descricao}</p>
+                    <h3>${escapar(nome)}</h3>
+                    <p class="info-extra"><strong>Tel/Zap:</strong> ${escapar(telefone)}</p>
+                    <p class="descricao-card">${escapar(descricao)}</p>
                 </div>
 
                 <button type="button" class="ver-detalhes-btn">Ver detalhes</button>
@@ -186,7 +254,7 @@ function exibirCards(comercios) {
                 if (instagram) {
                     let handleLimpo = instagram.replace('@', '');
                     modalInstagramLink.textContent = instagram;
-                    modalInstagramLink.href = `https://instagram.com/${handleLimpo}`;
+                    modalInstagramLink.href = `https://instagram.com/${encodeURIComponent(handleLimpo)}`;
                     modalInstagramLink.style.display = "inline";
                 } else {
                     modalInstagramLink.textContent = "Não informado";
@@ -252,6 +320,10 @@ function exibirCards(comercios) {
         quantidadeResultados++;
     });
 
+        if (quantidadeResultados === 0) {
+        cardContainer.innerHTML = `<p class="sem-resultados" style="padding: 20px;">Nenhum comércio encontrado. Tente outras palavras ou limpe os filtros.</p>`;
+    }
+
     if (resultado) resultado.textContent = quantidadeResultados;
     ativarEventosFavoritos();
 }
@@ -268,35 +340,23 @@ window.addEventListener("click", (e) => {
     }
 });
 
-function normalizarTexto(texto) {
-    if (!texto) return "";
-    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-}
-
 function aplicarFiltros() {
-    let categoriaSelecionada = normalizarTexto(seletorCategoria.value);
-    let textoBusca = normalizarTexto(campoBusca.value);
+    let categoriaSelecionada = resolverCategoria(seletorCategoria.value);
+    let textoBusca = campoBusca.value;
     let textoLocalizacao = normalizarTexto(campoLocalizacao.value);
 
     let comerciosFiltrados = listaComerciosOriginal.filter(function(comercio) {
         let negocio = comercio.dadosNegocio || {};
-        let nome = normalizarTexto(comercio.nomeComercio || negocio.nome || comercio.nomeEmpreendedor || "");
-        let bairro = normalizarTexto(comercio.bairro || negocio.bairro || "");
-        
-        let catComercio = normalizarTexto((comercio.categoria || "").replace(/["']/g, ""));
-        let catNegocio = normalizarTexto((negocio.categoria || "").replace(/["']/g, ""));
-
         let nomeOriginal = comercio.nomeComercio || negocio.nome || comercio.nomeEmpreendedor || "";
         if (!nomeOriginal || nomeOriginal.trim() === "" || nomeOriginal === "-") return false;
 
-        let correspondeCategoria = categoriaSelecionada === "todas" || 
-                                   catComercio === categoriaSelecionada || 
-                                   catNegocio === categoriaSelecionada ||
-                                   catComercio.includes(categoriaSelecionada) ||
-                                   catNegocio.includes(categoriaSelecionada);
+        let bairro = comercio.bairro || negocio.bairro || "";
+        let categoria = comercio.categoria || negocio.categoria || "";
+        let descricao = comercio.descricao || negocio.descricao || "";
 
-        let correspondeBusca = nome.includes(textoBusca);
-        let correspondeLocalizacao = bairro.includes(textoLocalizacao);
+        let correspondeCategoria = categoriaCorresponde(categoria, categoriaSelecionada);
+        let correspondeBusca = buscaCorresponde(textoBusca, [nomeOriginal, descricao, categoria, bairro]);
+        let correspondeLocalizacao = normalizarTexto(bairro).includes(textoLocalizacao);
 
         return correspondeCategoria && correspondeBusca && correspondeLocalizacao;
     });
@@ -325,11 +385,13 @@ async function carregarDadosFirebase() {
 
 if (botaoFiltro) botaoFiltro.addEventListener("click", aplicarFiltros);
 if (campoBusca) {
+    campoBusca.addEventListener("input", aplicarFiltros);
     campoBusca.addEventListener("keyup", function(e) {
         if (e.key === "Enter") aplicarFiltros();
     });
 }
 if (campoLocalizacao) {
+    campoLocalizacao.addEventListener("input", aplicarFiltros);
     campoLocalizacao.addEventListener("keyup", function(e) {
         if (e.key === "Enter") aplicarFiltros();
     });
