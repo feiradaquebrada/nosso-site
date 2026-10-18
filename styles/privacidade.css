@@ -1,0 +1,175 @@
+/* =======================================================================
+ * ESTILOS DA PÁGINA DE PRIVACIDADE E TERMOS (styles/privacidade.css)
+ * Usa apenas as cores da paleta definida em styleinicio.css
+ * ======================================================================= */
+
+.hero-politica {
+    padding: 140px 2.5rem 3rem;
+    background-color: var(--cor-fundo-creme);
+}
+
+.hero-politica-container {
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+    background-color: var(--cor-secao);
+    border-radius: var(--raio-borda-padrao);
+    padding: 2.5rem 3rem;
+}
+
+.hero-politica h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--cor-texto);
+    margin-bottom: 0.75rem;
+}
+
+.hero-politica p {
+    color: var(--cor-texto);
+    line-height: 1.65;
+    max-width: 70ch;
+}
+
+.hero-politica .data-atualizacao {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+/* Layout: sumário + conteúdo */
+.politica-layout {
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+    padding: 0 2.5rem 5rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    background-color: var(--cor-fundo-creme);
+}
+
+.politica-sumario {
+    position: sticky;
+    top: 110px;
+    background-color: var(--cor-card);
+    border-radius: var(--raio-borda-padrao);
+    padding: 1.5rem;
+}
+
+.politica-sumario h2 {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    margin-bottom: 0.75rem;
+}
+
+.politica-sumario ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.politica-sumario a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: var(--cor-texto);
+    transition: background-color var(--transicao-padrao);
+}
+
+.politica-sumario a:hover,
+.politica-sumario a:focus-visible {
+    background-color: var(--cor-fundo-creme);
+}
+
+.politica-conteudo {
+    background-color: var(--cor-branco-puro);
+    border-radius: var(--raio-borda-padrao);
+    padding: 2.5rem 3rem;
+    color: var(--cor-texto);
+}
+
+.politica-conteudo section {
+    scroll-margin-top: 110px;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--cor-texto) 15%, transparent);
+}
+
+.politica-conteudo section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.politica-conteudo h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+.politica-conteudo h3 {
+    font-size: 1.15rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--cor-texto);
+}
+
+.politica-conteudo p,
+.politica-conteudo li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.politica-conteudo p + p { margin-top: 0.85rem; }
+
+.politica-conteudo ul.lista-politica {
+    list-style: disc;
+    padding-left: 1.4rem;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.politica-conteudo a:not(.btn-voltar) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Destaque da seção 6 (LGPD, Acessibilidade e Segurança) */
+.politica-destaque {
+    background-color: var(--cor-secao);
+    border-radius: var(--raio-borda-padrao);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.politica-destaque h3 { margin-top: 0; }
+
+.politica-aviso {
+    background-color: var(--cor-card);
+    border-radius: var(--raio-borda-padrao);
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .hero-politica { padding: 120px 1rem 2rem; }
+    .hero-politica-container { padding: 1.75rem 1.25rem; }
+
+    .politica-layout {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 3rem;
+        gap: 1.25rem;
+    }
+
+    .politica-sumario { position: static; }
+    .politica-conteudo { padding: 1.5rem 1.25rem; }
+    .politica-conteudo h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .politica-sumario a { transition: none; }
+}

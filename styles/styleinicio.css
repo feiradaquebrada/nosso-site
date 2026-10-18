@@ -42,8 +42,8 @@ body {
     font-family: var(--fonte-principal);
     font-size: 16px;
     line-height: 1.5;
-    color: var(--cor-texto-primario);
-    background-color: var(--cor-fundo-creme);
+    color: var(--cor-texto);
+    background-color: var(--cor-branco-puro);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -72,7 +72,7 @@ button, input {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-    outline: 3px solid var(--cor-texto-primario);
+    outline: 3px solid var(--cor-texto);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -104,10 +104,10 @@ header.cabecalho-principal {
     justify-content: space-between;
     gap: 1.5rem;
     padding: 1rem 2.5rem;
-    background-color: rgba(255, 244, 228, 0.35);
+    background-color: color-mix(in srgb, var(--cor-fundo-creme) 35%, transparent);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px color-mix(in srgb, var(--cor-texto) 8%, transparent);
     transition: background-color var(--transicao-padrao), backdrop-filter var(--transicao-padrao);
     flex-wrap: wrap; /* Permite que o menu desça no mobile */
 }
@@ -118,7 +118,7 @@ header.cabecalho-principal {
     background: transparent;
     border: none;
     font-size: 1.8rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     cursor: pointer;
 }
 
@@ -132,13 +132,13 @@ header.cabecalho-principal {
 }
 
 header.cabecalho-principal.header-escuro {
-    background-color: rgba(49, 39, 25, 0.85);
+    background-color: color-mix(in srgb, var(--cor-texto) 85%, transparent);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 header.cabecalho-principal.header-escuro nav a { color: var(--cor-branco-puro); }
-header.cabecalho-principal.header-escuro nav a:hover { color: var(--cor-bege-destaque); }
+header.cabecalho-principal.header-escuro nav a:hover { color: var(--cor-card); }
 header.cabecalho-principal.header-escuro .btn-menu-mobile { color: var(--cor-branco-puro); } /* Menu branco no escuro */
 
 header.cabecalho-principal.header-escuro a:focus-visible,
@@ -153,6 +153,7 @@ header.cabecalho-principal.header-escuro input:focus-visible {
     object-fit: contain;
 }
 
+/* Logo branca só aparece com o header escuro (após o scroll) */
 .logo .logo-branca { display: none; }
 header.cabecalho-principal.header-escuro .logo .logo-normal { display: none; }
 header.cabecalho-principal.header-escuro .logo .logo-branca { display: block; }
@@ -164,19 +165,19 @@ header.cabecalho-principal nav ul {
 
 header.cabecalho-principal nav a {
     font-weight: 500;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     transition: color var(--transicao-padrao);
 }
 
 header.cabecalho-principal nav a:hover {
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     opacity: 0.7;
 }
 
 header.cabecalho-principal form[role="search"] {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: color-mix(in srgb, var(--cor-branco-puro) 85%, transparent);
     border-radius: 9999px;
     padding: 0.5rem 1rem;
     backdrop-filter: blur(4px);
@@ -207,17 +208,17 @@ header.cabecalho-principal form[role="search"] button {
 
 .auth-acoes .btn-link {
     background-color: var(--cor-branco-puro);
-    color: var(--cor-texto-primario) !important;
+    color: var(--cor-texto) !important;
     padding: 0.5rem 1.25rem;
     border-radius: 9999px;
     font-weight: 700;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--cor-texto) 8%, transparent);
     transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
 }
 
 .auth-acoes .btn-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 8px color-mix(in srgb, var(--cor-texto) 12%, transparent);
 }
 
 /* ==========================================
@@ -230,7 +231,7 @@ header.cabecalho-principal form[role="search"] button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: color-mix(in srgb, var(--cor-texto) 60%, transparent);
     z-index: 150;
     opacity: 0;
     visibility: hidden;
@@ -258,8 +259,8 @@ header.cabecalho-principal form[role="search"] button {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
-    header.cabecalho-principal { background-color: rgba(255, 244, 228, 0.92); }
-    header.cabecalho-principal.header-escuro { background-color: rgba(49, 39, 25, 0.95); }
+    header.cabecalho-principal { background-color: color-mix(in srgb, var(--cor-fundo-creme) 92%, transparent); }
+    header.cabecalho-principal.header-escuro { background-color: color-mix(in srgb, var(--cor-texto) 95%, transparent); }
 
     .btn-menu-mobile { display: block; }
 
@@ -286,7 +287,7 @@ header.cabecalho-principal form[role="search"] button {
         align-items: stretch;
         padding: 0.75rem 1.25rem 1.25rem;
         gap: 1rem;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+        box-shadow: -5px 0 20px color-mix(in srgb, var(--cor-texto) 15%, transparent);
         transform: translateX(100%);
         visibility: hidden;
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
@@ -304,7 +305,7 @@ header.cabecalho-principal form[role="search"] button {
     header.cabecalho-principal.header-escuro .menu-colapsavel nav a:hover,
     header.cabecalho-principal.header-escuro .menu-colapsavel .btn-fechar-menu,
     header.cabecalho-principal.header-escuro .menu-colapsavel form[role="search"] button {
-        color: var(--cor-texto-primario) !important;
+        color: var(--cor-texto) !important;
     }
 
     .btn-fechar-menu {
@@ -315,7 +316,7 @@ header.cabecalho-principal form[role="search"] button {
         font-size: 1.6rem;
         line-height: 1;
         font-weight: bold;
-        color: var(--cor-texto-primario);
+        color: var(--cor-texto);
         cursor: pointer;
         padding: 10px;
         margin-right: -10px;
@@ -331,7 +332,7 @@ header.cabecalho-principal form[role="search"] button {
     header.cabecalho-principal form[role="search"] {
         width: 100%;
         margin: 0;
-        background-color: #fff;
+        background-color: var(--cor-branco-puro);
     }
     header.cabecalho-principal form[role="search"] input { width: 100%; }
 
@@ -347,7 +348,7 @@ header.cabecalho-principal form[role="search"] button {
         flex: 1;
         text-align: center;
         padding: 0.6rem 0.5rem;
-        border: 1px solid rgba(49, 39, 25, 0.15);
+        border: 1px solid color-mix(in srgb, var(--cor-texto) 15%, transparent);
     }
 }
 
@@ -366,7 +367,7 @@ header.cabecalho-principal form[role="search"] button {
     background-color: var(--cor-branco-puro);
     min-width: 220px; 
     border-radius: var(--raio-borda-padrao);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--cor-texto) 15%, transparent); 
     padding: 0.5rem 0;
     display: flex;
     flex-direction: column;
@@ -378,8 +379,8 @@ header.cabecalho-principal form[role="search"] button {
 
 .dropdown-balao::-webkit-scrollbar { width: 6px; }
 .dropdown-balao::-webkit-scrollbar-track { background: var(--cor-branco-puro); border-radius: var(--raio-borda-padrao); }
-.dropdown-balao::-webkit-scrollbar-thumb { background: #cccccc; border-radius: var(--raio-borda-padrao); }
-.dropdown-balao::-webkit-scrollbar-thumb:hover { background: #aaaaaa; }
+.dropdown-balao::-webkit-scrollbar-thumb { background: var(--cor-card); border-radius: var(--raio-borda-padrao); }
+.dropdown-balao::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--cor-texto) 45%, transparent); }
 
 .dropdown-balao.escondido {
     display: none !important;
@@ -400,11 +401,11 @@ header.cabecalho-principal form[role="search"] button {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--cor-texto-primario) !important; 
+    color: var(--cor-texto) !important; 
 }
 
 .dropdown-balao a:hover {
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
     opacity: 1 !important;
 }
 
@@ -433,7 +434,7 @@ header.cabecalho-principal form[role="search"] button {
 
     .dropdown-balao a:hover,
     .dropdown-balao a:focus-visible {
-        background-color: #ffffff;
+        background-color: var(--cor-branco-puro);
         opacity: 1 !important;
     }
 }
@@ -488,7 +489,7 @@ header.cabecalho-principal form[role="search"] button {
     z-index: 20;
     bottom: 1.5rem;
     right: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: color-mix(in srgb, var(--cor-branco-puro) 85%, transparent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: none;
@@ -496,7 +497,7 @@ header.cabecalho-principal form[role="search"] button {
     padding: 0.6rem 1.25rem;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     cursor: pointer;
     transition: transform var(--transicao-padrao);
 }
@@ -516,7 +517,7 @@ header.cabecalho-principal form[role="search"] button {
 .hero-conteudo h1,
 .hero-conteudo p {
     color: var(--cor-branco-puro);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 12px color-mix(in srgb, var(--cor-texto) 60%, transparent), 0 1px 3px color-mix(in srgb, var(--cor-texto) 80%, transparent);
 }
 
 .hero-conteudo p {
@@ -542,8 +543,8 @@ header.cabecalho-principal form[role="search"] button {
 
 .hero-botoes .btn-primario {
     background-color: var(--cor-branco-puro);
-    color: var(--cor-texto-primario);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+    color: var(--cor-texto);
+    box-shadow: 0 4px 6px color-mix(in srgb, var(--cor-texto) 6%, transparent);
 }
 
 .hero-botoes .btn-secundario {
@@ -554,7 +555,7 @@ header.cabecalho-principal form[role="search"] button {
 
 .hero-botoes a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 12px color-mix(in srgb, var(--cor-texto) 12%, transparent);
 }
 
 @media (max-width: 900px) {
@@ -596,7 +597,7 @@ header.cabecalho-principal form[role="search"] button {
 .profissoes-cabecalho p {
     font-size: 0.95rem;
     max-width: 30rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
 }
 
 /* Faixa de fotos: ocupa a largura toda da tela */
@@ -661,7 +662,7 @@ header.cabecalho-principal form[role="search"] button {
     padding: 0.4rem 1rem;
     font: inherit;
     font-size: 0.85rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     background: transparent;
     border: 1px solid currentColor;
     border-radius: 999px;
@@ -685,7 +686,7 @@ header.cabecalho-principal form[role="search"] button {
  * ========================================== */
 .secao-categorias {
     padding: 5rem 2.5rem;
-    background-color: var(#FFEDD5);
+    background-color: var(--cor-fundo-creme);
 }
 
 .categorias-container {
@@ -705,7 +706,7 @@ header.cabecalho-principal form[role="search"] button {
 
 .categorias-cabecalho p {
     font-size: 0.95rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
 }
 
 .categorias-lista {
@@ -719,7 +720,7 @@ header.cabecalho-principal form[role="search"] button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
     padding: 1.75rem 1rem;
     border-radius: var(--raio-borda-padrao);
     transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
@@ -727,11 +728,11 @@ header.cabecalho-principal form[role="search"] button {
 
 .categoria-card img { margin-bottom: 0.85rem; }
 .categoria-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
-.categoria-card span { font-size: 0.8rem; color: var(--cor-texto-secundario); opacity: 0.65; }
+.categoria-card span { font-size: 0.8rem; color: var(--cor-texto); opacity: 0.65; }
 
 .categoria-card a:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 12px color-mix(in srgb, var(--cor-texto) 8%, transparent);
 }
 
 @media (max-width: 900px) {
@@ -751,7 +752,7 @@ header.cabecalho-principal form[role="search"] button {
 .sobre-container {
     max-width: var(--largura-maxima-conteudo);
     margin: 0 auto;
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
     border-radius: var(--raio-borda-padrao);
     padding: 2.5rem;
     display: grid;
@@ -772,7 +773,7 @@ header.cabecalho-principal form[role="search"] button {
 .sobre-texto p {
     font-size: 0.95rem;
     line-height: 1.65;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     margin-bottom: 1rem;
 }
 .sobre-texto p:last-child { margin-bottom: 0; }
@@ -783,19 +784,19 @@ header.cabecalho-principal form[role="search"] button {
 
 .btn-saiba-mais {
     display: inline-block;
-    background-color: var(--cor-texto-primario);
+    background-color: var(--cor-texto);
     color: var(--cor-fundo-creme) !important;
     padding: 0.75rem 2rem;
     border-radius: 9999px;
     font-weight: 700;
     font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(49, 39, 25, 0.15);
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--cor-texto) 15%, transparent);
     transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
 }
 
 .btn-saiba-mais:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(49, 39, 25, 0.25);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--cor-texto) 25%, transparent);
 }
 
 @media (max-width: 900px) {
@@ -809,7 +810,7 @@ header.cabecalho-principal form[role="search"] button {
     max-width: 1100px;
     margin: 40px auto;
     padding: 40px 30px;
-    background-color: #FFEDD5; 
+    background-color: var(--cor-fundo-creme); 
     border-radius: 12px;
 }
 
@@ -833,7 +834,7 @@ header.cabecalho-principal form[role="search"] button {
 .icone-bg {
     width: 65px;
     height: 65px;
-    background-color: #FFE4BD; 
+    background-color: var(--cor-secao); 
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -851,13 +852,13 @@ header.cabecalho-principal form[role="search"] button {
     margin: 0 0 4px 0;
     font-size: 1.6rem;
     font-weight: 500;
-    color: #2B2B2B;
+    color: var(--cor-texto);
 }
 
 .contas p {
     margin: 0;
     font-size: 0.9rem;
-    color: #555555;
+    color: var(--cor-texto);
     font-weight: 400;
 }
 
@@ -885,13 +886,13 @@ header.cabecalho-principal form[role="search"] button {
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 8px;
-    color: #312719;
+    color: var(--cor-texto);
 }
 
 .coment .headerdepoimentos p {
     font-size: 1.25rem;
     font-weight: 300;
-    color: #312719;
+    color: var(--cor-texto);
     margin-bottom: 48px;
 }
 
@@ -902,7 +903,7 @@ header.cabecalho-principal form[role="search"] button {
 }
 
 .coment .card {
-    background-color: #FFEDD5;
+    background-color: var(--cor-secao);
     padding: 40px 24px 32px 24px;
     border-radius: 8px;
     display: flex;
@@ -927,7 +928,7 @@ header.cabecalho-principal form[role="search"] button {
 .coment .quote {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #312719;
+    color: var(--cor-texto);
     margin-bottom: 24px;
     flex-grow: 1;
     font-weight: bold;
@@ -935,7 +936,7 @@ header.cabecalho-principal form[role="search"] button {
 
 .coment .autor {
     font-size: 0.85rem;
-    color: #312719;
+    color: var(--cor-texto);
     font-weight: 500;
 }
 
@@ -992,7 +993,7 @@ header.cabecalho-principal form[role="search"] button {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: color-mix(in srgb, var(--cor-texto) 35%, transparent);
 }
 
 .mapa-card {
@@ -1000,7 +1001,7 @@ header.cabecalho-principal form[role="search"] button {
     z-index: 2;
     max-width: 420px;
     text-align: center;
-    background-color: rgba(255, 237, 213, 0.92);
+    background-color: color-mix(in srgb, var(--cor-secao) 92%, transparent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: var(--raio-borda-padrao);
@@ -1016,7 +1017,7 @@ header.cabecalho-principal form[role="search"] button {
 .mapa-card h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
 .mapa-card p {
     font-size: 0.9rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     margin-bottom: 1.5rem;
 }
 
@@ -1031,7 +1032,7 @@ header.cabecalho-principal form[role="search"] button {
 
 .btn-mapa:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 12px color-mix(in srgb, var(--cor-texto) 12%, transparent);
 }
 
 @media (max-width: 768px) {
@@ -1046,7 +1047,7 @@ header.cabecalho-principal form[role="search"] button {
  * ========================================== */
 
 .rodape-principal {
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
 }
 
 .rodape-container {
@@ -1061,7 +1062,7 @@ header.cabecalho-principal form[role="search"] button {
 
 .rodape-marca p {
     font-size: 0.9rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     line-height: 1.6;
     margin-bottom: 1.25rem;
 }
@@ -1087,14 +1088,20 @@ header.cabecalho-principal form[role="search"] button {
 }
 
 .rodape-copyright {
-    background-color: var(--cor-bege-destaque);
+    background-color: var(--cor-card);
     padding: 1.25rem;
     text-align: center;
 }
 
 .rodape-copyright small {
     font-size: 0.8rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
 }
 
 
+
+/* Link legal no rodapé (Privacidade e Termos) */
+.rodape-copyright a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

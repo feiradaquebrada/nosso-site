@@ -13,7 +13,7 @@
 .hero-sobre-container {
     max-width: var(--largura-maxima-conteudo);
     margin: 0 auto;
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
     border-radius: var(--raio-borda-padrao);
     padding: 3rem;
     display: grid;
@@ -24,8 +24,8 @@
 
 .selo-projeto {
     display: inline-block;
-    background-color: var(--cor-bege-destaque);
-    color: var(--cor-texto-primario);
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
     font-size: 0.85rem;
     font-weight: 700;
     padding: 0.4rem 1rem;
@@ -36,14 +36,14 @@
 .hero-sobre-texto h1 {
     font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.2;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     margin-bottom: 1.25rem;
 }
 
 .hero-sobre-texto p {
     font-size: 1rem;
     line-height: 1.65;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     margin-bottom: 1rem;
 }
 
@@ -78,13 +78,13 @@
 
 .equipe-cabecalho h2 {
     font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     margin-bottom: 0.5rem;
 }
 
 .equipe-cabecalho p {
     font-size: 1rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
 }
 
 .equipe-lista {
@@ -94,7 +94,7 @@
 }
 
 .integrante-card {
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
     padding: 2rem 1.25rem;
     border-radius: var(--raio-borda-padrao);
     display: flex;
@@ -115,7 +115,7 @@
     margin-bottom: 1rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--cor-bege-destaque);
+    border: 3px solid var(--cor-card);
     background-color: var(--cor-fundo-creme);
 }
 
@@ -128,13 +128,13 @@
 .integrante-card h3 {
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     margin-bottom: 0.25rem;
 }
 
 .integrante-card span {
     font-size: 0.85rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     opacity: 0.8;
 }
 
@@ -165,26 +165,26 @@
 }
 
 .cta-card {
-    background-color: var(--cor-bege-destaque);
+    background-color: var(--cor-card);
 }
 
 .cta-card h2 {
     font-size: 1.85rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     margin-bottom: 1rem;
 }
 
 .cta-card p {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     margin-bottom: 1.75rem;
 }
 
 .btn-cta-cadastro {
     align-self: flex-start;
     display: inline-block;
-    background-color: var(--cor-texto-primario);
+    background-color: var(--cor-texto);
     color: var(--cor-fundo-creme) !important;
     padding: 0.9rem 2rem;
     border-radius: 9999px;
@@ -198,18 +198,18 @@
 }
 
 .contato-card {
-    background-color: var(--cor-card-bege);
+    background-color: var(--cor-secao);
 }
 
 .contato-card h3 {
     font-size: 1.4rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
     margin-bottom: 0.75rem;
 }
 
 .contato-card p {
     font-size: 0.95rem;
-    color: var(--cor-texto-secundario);
+    color: var(--cor-texto);
     margin-bottom: 1.25rem;
 }
 
@@ -221,7 +221,7 @@
 
 .contato-lista li {
     font-size: 0.95rem;
-    color: var(--cor-texto-primario);
+    color: var(--cor-texto);
 }
 
 .contato-lista a {
