@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sobre Nós | Feira da Quebrada</title>
-    <meta name="description" content="Conheça a história e a equipe por trás da Feira da Quebrada, projeto criado por estudantes do PROA em parceria com a Serasa Experian.">
+    <title>Política de Privacidade e Termos de Uso | Feira da Quebrada</title>
+    <meta name="description" content="Conheça a Política de Privacidade e os Termos de Uso da Feira da Quebrada: como tratamos seus dados (LGPD), acessibilidade, segurança e regras de uso da plataforma.">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,14 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="../styles/styleinicio.css">
-    <link rel="stylesheet" href="../styles/sobre.css">
+    <link rel="stylesheet" href="../styles/privacidade.css">
     <link rel="stylesheet" href="../styles/chat.css">
 
     <!-- Scripts -->
     <script src="../scripts/sobre.js" defer></script>
     <script src="../scripts/chat.js" defer></script>
 </head>
+
 <body>
 
     <!-- ========================================== -->
@@ -28,7 +29,8 @@
     <!-- ========================================== -->
     <header class="cabecalho-principal">
         <a href="../index.html" class="logo">
-            <img src="../imagens/logo.png" alt="Logo da Feira de Quebrada">
+            <img src="../imagens/logo.png" alt="Logo da Feira de Quebrada" class="logo-normal">
+            <img src="../imagens/logo-branca.png" alt="" aria-hidden="true" class="logo-branca">
         </a>
 
         <button id="btn-menu-mobile" class="btn-menu-mobile" aria-label="Abrir menu">☰</button>
@@ -53,7 +55,7 @@
                             <li><a href="filtro.html?categoria=tatuagem">Tatuagem</a></li>
                         </ul>
                     </li>
-                    <li><a href="../index.html#sobre">Sobre</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
 
@@ -76,141 +78,192 @@
     <!-- ========================================== -->
     <main>
 
-        <!-- 1. HERO PROFISSIONAL SOBRE NÓS -->
-        <section class="hero-sobre" aria-labelledby="titulo-hero-sobre">
-            <div class="hero-sobre-container">
-                <div class="hero-sobre-texto">
-                    <span class="selo-projeto">🪁 Projeto Integrador • PROA & Serasa Experian</span>
-                    <h1 id="titulo-hero-sobre">Aqui, a sua quebrada sonha e voa alto!</h1>
-                    <p>
-                        A <strong>Feira da Quebrada</strong> nasceu do sonho de um grupo de estudantes do <strong>Instituto PROA</strong> (curso <em>Transforme-se</em>) em parceria com a <strong>Serasa Experian</strong>.
-                    </p>
-                    <p>
-                        Nosso objetivo é conectar pequenos comerciantes e empreendedores locais aos moradores de suas próprias comunidades, dando visibilidade a quem trabalha duro todos os dias e fortalecendo a economia do bairro de forma simples, segura e gratuita.
-                    </p>
-                </div>
-
-                <figure class="hero-sobre-imagem">
-                    <img src="../imagens/beco.jpg" alt="Imagem representando a cultura e força da comunidade">
-                </figure>
+        <!-- TOPO -->
+        <section class="hero-politica" aria-labelledby="titulo-politica">
+            <div class="hero-politica-container">
+                <h1 id="titulo-politica">Política de Privacidade e Termos de Uso</h1>
+                <p>
+                    Aqui explicamos, em linguagem simples, como a <strong>Feira da Quebrada</strong> trata os seus dados e quais são as regras para usar a plataforma. Ao criar uma conta ou usar o site, você declara ter lido e concordado com este documento.
+                </p>
+                <p class="data-atualizacao"><small>Última atualização: 18 de outubro de 2026</small></p>
             </div>
         </section>
 
-        <!-- 2. NOSSA EQUIPE (NOMES E FOTINHAS) -->
-        <section class="secao-equipe" aria-labelledby="titulo-equipe">
-            <div class="equipe-container">
-                <header class="equipe-cabecalho">
-                    <h2 id="titulo-equipe">Quem faz a Feira acontecer</h2>
-                    <p>Conheça os estudantes responsáveis por idealizar e desenvolver este projeto.</p>
-                </header>
+        <div class="politica-layout">
 
-                <!-- Grade com as fotos e nomes da equipe -->
-                <!-- DICA: Troque o src="../imagens/..." pela foto de cada integrante -->
-                <ul class="equipe-lista" role="list">
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Adrielly">
-                        </div>
-                        <h3>Adrielly</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
+            <!-- SUMÁRIO -->
+            <nav class="politica-sumario" aria-label="Sumário da página">
+                <h2>Neste documento</h2>
+                <ol>
+                    <li><a href="#introducao">1. Introdução</a></li>
+                    <li><a href="#quem-somos">2. Quem somos</a></li>
+                    <li><a href="#dados-coletados">3. Dados que coletamos</a></li>
+                    <li><a href="#uso-compartilhamento">4. Uso e compartilhamento</a></li>
+                    <li><a href="#direitos">5. Seus direitos</a></li>
+                    <li><a href="#lgpd-acessibilidade-seguranca">6. LGPD, acessibilidade e segurança</a></li>
+                    <li><a href="#termos-de-uso">7. Termos de uso</a></li>
+                    <li><a href="#alteracoes-contato">8. Alterações e contato</a></li>
+                </ol>
+            </nav>
 
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Ana">
-                        </div>
-                        <h3>Ana</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
+            <!-- CONTEÚDO -->
+            <article class="politica-conteudo">
 
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Brenda">
-                        </div>
-                        <h3>Brenda</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
-
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Elias">
-                        </div>
-                        <h3>Elias</h3>
-                        <span>Desenvolvedor</span>
-                    </li>
-
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Ketty">
-                        </div>
-                        <h3>Ketty</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
-
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Muriel">
-                        </div>
-                        <h3>Muriel</h3>
-                        <span>Desenvolvedor</span>
-                    </li>
-
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Nathalie">
-                        </div>
-                        <h3>Nathalie</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
-
-                    <li class="integrante-card">
-                        <div class="integrante-foto">
-                            <img src="../imagens/fey.png" alt="Foto de Nívea">
-                        </div>
-                        <h3>Nívea</h3>
-                        <span>Desenvolvedora</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 3. CONTATO DO PROGRAMA E CHAMADA PARA AÇÃO (CTA) -->
-        <section class="secao-contato-cta" aria-labelledby="titulo-cta">
-            <div class="contato-cta-container">
-
-                <!-- Card de Chamada para Cadastro -->
-                <div class="cta-card">
-                    <h2 id="titulo-cta">Venha fazer parte dessa história!</h2>
+                <section id="introducao" aria-labelledby="t-introducao">
+                    <h2 id="t-introducao">1. Introdução</h2>
                     <p>
-                        Tem um comércio ou oferece algum serviço no seu bairro? Cadastre-se gratuitamente na <strong>Feira da Quebrada</strong>, mostre seu talento para os seus vizinhos e faça seu negócio voar alto!
+                        A Feira da Quebrada é uma plataforma gratuita que conecta pequenos comerciantes e empreendedores locais aos moradores de suas próprias comunidades. Este documento reúne a nossa <strong>Política de Privacidade</strong> (como cuidamos dos seus dados pessoais) e os nossos <strong>Termos de Uso</strong> (as regras para usar a plataforma).
                     </p>
-                    <a href="cadastro.html" class="btn-cta-cadastro">Quero fazer parte dessa história</a>
-                </div>
+                </section>
 
-                <!-- Card de Contato do Projeto -->
-                <div class="contato-card">
-                    <h3>Fale com a gente</h3>
-                    <p>Ficou com alguma dúvida ou quer apoiar o nosso projeto? Entre em contato pelos nossos canais oficiais:</p>
+                <section id="quem-somos" aria-labelledby="t-quem-somos">
+                    <h2 id="t-quem-somos">2. Quem somos</h2>
+                    <p>
+                        A Feira da Quebrada é um projeto desenvolvido por estudantes do Instituto PROA (curso <em>Transforme-se</em>) em parceria com a Serasa Experian. Para qualquer assunto sobre privacidade e dados pessoais, fale com a equipe pelo e-mail <a href="mailto:feiradaquebrada@gmail.com">feiradaquebrada@gmail.com</a>.
+                    </p>
+                </section>
 
-                    <ul class="contato-lista">
-                        <li>
-                            <strong>📧 E-mail:</strong>
-                            <a href="mailto:feiradaquebrada@gmail.com">feiradaquebrada@gmail.com</a>
-                        </li>
-                        <li>
-                            <strong>📸 Instagram:</strong>
-                            <a href="https://www.instagram.com/feiradaquebrada" target="_blank" rel="noopener noreferrer">@feiradaquebrada</a>
-                        </li>
-                        <li>
-                            <strong>🎓 Realização:</strong>
-                            <span>Estudantes PROA (Transforme-se) & Serasa Experian</span>
-                        </li>
+                <section id="dados-coletados" aria-labelledby="t-dados-coletados">
+                    <h2 id="t-dados-coletados">3. Dados que coletamos</h2>
+                    <p>Coletamos apenas o necessário para o cadastro, o funcionamento e a segurança da plataforma.</p>
+
+                    <h3>Dados de cadastro (clientes e empreendedores)</h3>
+                    <ul class="lista-politica">
+                        <li>Nome completo;</li>
+                        <li>E-mail;</li>
+                        <li>Senha (usada para autenticação) e palavra de segurança;</li>
+                        <li>Telefone de contato, quando você o informa na configuração da conta.</li>
                     </ul>
-                </div>
 
-            </div>
-        </section>
+                    <h3>Dados do empreendedor e do negócio</h3>
+                    <ul class="lista-politica">
+                        <li>CPF ou CNPJ, informado no painel do empreendedor;</li>
+                        <li>Nome do comércio, categoria, descrição e foto;</li>
+                        <li>CEP e bairro, WhatsApp e Instagram do negócio;</li>
+                        <li>Modalidade de atendimento, horário de funcionamento e formas de pagamento aceitas.</li>
+                    </ul>
 
+                    <p class="politica-aviso">
+                        <strong>Importante:</strong> o endereço pessoal do empreendedor não é exibido ao público. Na vitrine e no mapa aparece apenas o bairro ou a região de atuação.
+                    </p>
+                </section>
+
+                <section id="uso-compartilhamento" aria-labelledby="t-uso-compartilhamento">
+                    <h2 id="t-uso-compartilhamento">4. Uso e compartilhamento dos dados</h2>
+
+                    <h3>Para que usamos seus dados</h3>
+                    <ul class="lista-politica">
+                        <li>Criar e manter a sua conta e permitir o login;</li>
+                        <li>Exibir a vitrine dos empreendedores e permitir que moradores encontrem negócios da região;</li>
+                        <li>Proteger a plataforma e as contas contra acessos não autorizados e fraudes;</li>
+                        <li>Responder dúvidas e solicitações enviadas à equipe.</li>
+                    </ul>
+
+                    <h3>Com quem compartilhamos</h3>
+                    <p>
+                        Não vendemos dados pessoais. Para funcionar, a plataforma usa serviços de terceiros, como o <strong>Google Firebase</strong> (autenticação e armazenamento de dados), o Google Fonts (fontes), o <strong>VLibras</strong> (tradução para Libras) e o <strong>UserWay</strong> (ferramentas de acessibilidade). Esses serviços podem tratar dados técnicos, como o endereço IP, conforme as suas próprias políticas.
+                    </p>
+                    <p>
+                        Informações do negócio (nome do comércio, categoria, descrição, bairro, WhatsApp, Instagram e foto) são públicas na vitrine, porque esse é o objetivo da plataforma. Também podemos compartilhar dados quando houver obrigação legal ou ordem de autoridade competente.
+                    </p>
+                </section>
+
+                <section id="direitos" aria-labelledby="t-direitos">
+                    <h2 id="t-direitos">5. Seus direitos como titular</h2>
+                    <p>De acordo com a LGPD, você pode pedir à equipe, a qualquer momento:</p>
+                    <ul class="lista-politica">
+                        <li>A confirmação de que tratamos seus dados e o acesso a eles;</li>
+                        <li>A correção de dados incompletos, inexatos ou desatualizados;</li>
+                        <li>A anonimização, o bloqueio ou a eliminação de dados desnecessários ou tratados fora da lei;</li>
+                        <li>A portabilidade dos dados, nos termos da regulamentação;</li>
+                        <li>Informações sobre com quem os dados são compartilhados;</li>
+                        <li>A revogação do consentimento e a exclusão da conta.</li>
+                    </ul>
+                    <p>
+                        Para exercer seus direitos, envie um e-mail para <a href="mailto:feiradaquebrada@gmail.com">feiradaquebrada@gmail.com</a>. Você também pode atualizar parte dos seus dados diretamente na área da sua conta.
+                    </p>
+                </section>
+
+                <section id="lgpd-acessibilidade-seguranca" aria-labelledby="t-lgpd">
+                    <h2 id="t-lgpd">6. LGPD, acessibilidade e segurança</h2>
+
+                    <div class="politica-destaque">
+                        <h3>LGPD</h3>
+                        <p>
+                            A Feira da Quebrada busca respeitar os princípios da Lei Geral de Proteção de Dados (LGPD), realizando a coleta apenas dos dados pessoais essenciais para o cadastro, funcionamento e segurança da plataforma e dos empreendedores. Dessa forma, evitamos a coleta excessiva de informações e priorizamos a finalidade e a necessidade no tratamento dos dados.
+                        </p>
+                    </div>
+
+                    <div class="politica-destaque">
+                        <h3>Acessibilidade</h3>
+                        <p>
+                            A plataforma foi pensada para proporcionar uma experiência simples e acessível. Para isso, utilizamos tipografia legível, boa organização visual, linguagem clara e navegação intuitiva, facilitando o acesso às informações e às principais funcionalidades do site.
+                        </p>
+                    </div>
+
+                    <div class="politica-destaque">
+                        <h3>Segurança</h3>
+                        <p>
+                            A segurança é uma prioridade, principalmente por muitos empreendedores trabalharem em suas próprias casas. Por isso, o site evita a exposição desnecessária de endereços pessoais, apresentando apenas a região de atuação do empreendedor. Além disso, o tratamento dos dados deve seguir medidas técnicas e administrativas adequadas para reduzir riscos de acesso não autorizado e outros incidentes.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="termos-de-uso" aria-labelledby="t-termos">
+                    <h2 id="t-termos">7. Termos de uso</h2>
+
+                    <h3>7.1 O que é a plataforma</h3>
+                    <p>
+                        A Feira da Quebrada é uma vitrine gratuita que divulga negócios locais e facilita o contato entre moradores e empreendedores. Nós <strong>não vendemos produtos nem prestamos os serviços anunciados</strong> e não participamos da negociação, do pagamento ou da entrega entre cliente e empreendedor.
+                    </p>
+
+                    <h3>7.2 Cadastro e conta</h3>
+                    <ul class="lista-politica">
+                        <li>Você deve fornecer informações verdadeiras e mantê-las atualizadas;</li>
+                        <li>A senha e a palavra de segurança são pessoais. Não as compartilhe com ninguém;</li>
+                        <li>Você é responsável pelas atividades feitas na sua conta.</li>
+                    </ul>
+
+                    <h3>7.3 Responsabilidades do empreendedor</h3>
+                    <ul class="lista-politica">
+                        <li>Responder pela veracidade das informações, fotos e preços divulgados;</li>
+                        <li>Oferecer produtos e serviços de forma lícita e respeitar a legislação aplicável, inclusive o Código de Defesa do Consumidor;</li>
+                        <li>Usar apenas imagens e conteúdos que você tem direito de divulgar.</li>
+                    </ul>
+
+                    <h3>7.4 Condutas não permitidas</h3>
+                    <ul class="lista-politica">
+                        <li>Publicar conteúdo falso, ofensivo, discriminatório, ilegal ou que viole direitos de terceiros;</li>
+                        <li>Usar a plataforma para golpes, fraudes ou para coletar dados de outras pessoas;</li>
+                        <li>Tentar acessar áreas restritas, contas de outras pessoas ou prejudicar o funcionamento do site.</li>
+                    </ul>
+                    <p>
+                        Contas ou conteúdos que descumprirem estes termos podem ser suspensos ou removidos.
+                    </p>
+
+                    <h3>7.5 Propriedade intelectual</h3>
+                    <p>
+                        A marca, a logo, o design e os textos da Feira da Quebrada pertencem ao projeto e não podem ser copiados ou usados sem autorização. Os conteúdos enviados pelos empreendedores continuam sendo deles, que nos autorizam a exibi-los na plataforma.
+                    </p>
+
+                    <h3>7.6 Limitação de responsabilidade</h3>
+                    <p>
+                        Fazemos o possível para manter o site disponível e as informações corretas, mas não garantimos funcionamento ininterrupto nem nos responsabilizamos por acordos, pagamentos, qualidade de produtos ou serviços e prazos combinados entre clientes e empreendedores. Recomendamos cuidado ao combinar pagamentos e encontros.
+                    </p>
+                </section>
+
+                <section id="alteracoes-contato" aria-labelledby="t-alteracoes">
+                    <h2 id="t-alteracoes">8. Alterações e contato</h2>
+                    <p>
+                        Podemos atualizar este documento para refletir melhorias na plataforma ou mudanças na lei. A data da última atualização fica sempre no topo da página. Se você continuar usando o site depois de uma atualização, entendemos que concorda com a nova versão.
+                    </p>
+                    <p>
+                        Ficou com alguma dúvida? Escreva para <a href="mailto:feiradaquebrada@gmail.com">feiradaquebrada@gmail.com</a> ou fale com a gente pelo <a href="https://www.instagram.com/feiradaquebrada" target="_blank" rel="noopener noreferrer">Instagram</a>.
+                    </p>
+                </section>
+
+            </article>
+        </div>
     </main>
 
     <!-- ================= CHATBOT ================= -->
@@ -283,11 +336,20 @@
                     </ul>
                 </nav>
             </div>
+
+            <nav class="rodape-links" aria-label="Páginas do site">
+                <h2>Páginas</h2>
+                <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre nós</a></li>
+                        <li><a href="privacidade.html" aria-current="page">Privacidade e Termos</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="rodape-copyright">
             <p>
-                <small>&copy; 2026 Feira de Quebrada. Todos os direitos reservados. &middot; <a href="privacidade.html">Privacidade e Termos</a></small>
+                <small>&copy; 2026 Feira de Quebrada. Todos os direitos reservados.</small>
             </p>
         </div>
     </footer>

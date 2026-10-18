@@ -66,7 +66,7 @@
 
             <nav aria-label="Navegação principal">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html" aria-current="page">Início</a></li>
                     
                     <li class="menu-dropdown">
                         <a href="#" id="btn-categorias" aria-expanded="false" aria-controls="lista-categorias">Categorias ▾</a>
@@ -81,7 +81,7 @@
                             <li><a href="pages/filtro.html?categoria=tatuagem">Tatuagem</a></li>
                         </ul>
                     </li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="pages/sobre.html">Sobre</a></li>
                 </ul>
             </nav>
 
@@ -140,8 +140,8 @@
 
                 <div class="hero-botoes">
                     <!-- Links atualizados para a pasta pages/ -->
-                    <a href="pages/anunciar.html" class="btn-primario">Comece agora</a>
-                    <a href="pages/contato.html" class="btn-secundario">Conheça o projeto</a>
+                    <a href="pages/cadastro.html" class="btn-primario">Comece agora</a>
+                    <a href="pages/sobre.html" class="btn-secundario">Conheça o projeto</a>
                 </div>
             </div>
         </section>
@@ -199,14 +199,14 @@
                     <!-- Links atualizados para a pasta  e ícones para a pasta icones/ -->
 
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=manicure">
+                        <a href="pages/filtro.html?categoria=manicure">
                             <img src="icones/iconemanicure.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Manicure</h3>
                             <span>Explorar agora</span>
                         </a>
                     </li>
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=beleza">
+                        <a href="pages/filtro.html?categoria=beleza">
                             <img src="icones/iconebeleza.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Beleza e Cuidados</h3>
                             <span>Explorar agora</span>
@@ -214,35 +214,35 @@
                     </li>
                     
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=artesanato">
+                        <a href="pages/filtro.html?categoria=artesanato">
                             <img src="icones/artesanato.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Arte e Artesanato</h3>
                             <span>Explorar agora</span>
                         </a>
                     </li>
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=alimentacao">
+                        <a href="pages/filtro.html?categoria=alimentacao">
                             <img src="icones/iconealimentacao.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Alimentação</h3>
                             <span>Explorar agora</span>
                         </a>
                     </li>
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=costura">
+                        <a href="pages/filtro.html?categoria=costura">
                             <img src="icones/iconecostura.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Moda e Costura</h3>
                             <span>Explorar agora</span>
                         </a>
                     </li>
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=tatuagem">
+                        <a href="pages/filtro.html?categoria=tatuagem">
                             <img src="icones/iconetatuagem.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Tatuagem</h3>
                             <span>Explorar agora</span>
                         </a>
                     </li>
                     <li class="categoria-card">
-                        <a href="filtro.html?categoria=cabelo">
+                        <a href="pages/filtro.html?categoria=cabelo">
                             <img src="icones/servico-tecnico.png" alt="" aria-hidden="true" width="48" height="48">
                             <h3>Serviços</h3>
                             <span>Explorar agora</span>
@@ -416,7 +416,7 @@
         <div class="rodape-container">
 
             <div class="rodape-marca">
-                <a href="inicio.html" class="rodape-logo-link">
+                <a href="index.html" class="rodape-logo-link">
                     <img src="imagens/logo.png" alt="Feira de Quebrada" width="140" height="auto">
                 </a>
                 <p>
@@ -439,6 +439,15 @@
                     </ul>
                 </nav>
             </div>
+
+            <nav class="rodape-links" aria-label="Páginas do site">
+                <h2>Páginas</h2>
+                <ul>
+                        <li><a href="index.html" aria-current="page">Início</a></li>
+                        <li><a href="pages/sobre.html">Sobre nós</a></li>
+                        <li><a href="pages/privacidade.html">Privacidade e Termos</a></li>
+                </ul>
+            </nav>
 
         </div>
 

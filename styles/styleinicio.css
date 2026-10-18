@@ -43,7 +43,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: var(--cor-texto);
-    background-color: var(--cor-branco-puro);
+    background-color: var(--cor-fundo-creme);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -579,7 +579,7 @@ header.cabecalho-principal form[role="search"] button {
 .secao-profissoes {
     padding: 4rem 0 5rem;
     background-color: var(--cor-fundo-creme);
-    overflow: hidden;                 /* nada vaza para os lados da página */
+    overflow: hidden;           
 }
 
 .profissoes-container {
@@ -696,6 +696,7 @@ header.cabecalho-principal form[role="search"] button {
     grid-template-columns: 300px 1fr;
     gap: 2.5rem;
     align-items: start;
+    background-color: var(--cor-secao);
 }
 
 .categorias-cabecalho h2 {
@@ -720,7 +721,7 @@ header.cabecalho-principal form[role="search"] button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: var(--cor-secao);
+    background-color: var(--cor-card);
     padding: 1.75rem 1rem;
     border-radius: var(--raio-borda-padrao);
     transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
@@ -752,7 +753,7 @@ header.cabecalho-principal form[role="search"] button {
 .sobre-container {
     max-width: var(--largura-maxima-conteudo);
     margin: 0 auto;
-    background-color: var(--cor-secao);
+    background-color: var(--cor-card);
     border-radius: var(--raio-borda-padrao);
     padding: 2.5rem;
     display: grid;
@@ -810,7 +811,7 @@ header.cabecalho-principal form[role="search"] button {
     max-width: 1100px;
     margin: 40px auto;
     padding: 40px 30px;
-    background-color: var(--cor-fundo-creme); 
+    background-color: var(--cor-secao); 
     border-radius: 12px;
 }
 
@@ -834,7 +835,7 @@ header.cabecalho-principal form[role="search"] button {
 .icone-bg {
     width: 65px;
     height: 65px;
-    background-color: var(--cor-secao); 
+    background-color: var(--cor-card); 
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1001,7 +1002,7 @@ header.cabecalho-principal form[role="search"] button {
     z-index: 2;
     max-width: 420px;
     text-align: center;
-    background-color: color-mix(in srgb, var(--cor-secao) 92%, transparent);
+    background-color: color-mix(in srgb, var(--cor-mapa) 75%, transparent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: var(--raio-borda-padrao);
@@ -1047,7 +1048,7 @@ header.cabecalho-principal form[role="search"] button {
  * ========================================== */
 
 .rodape-principal {
-    background-color: var(--cor-secao);
+    background-color: var(--cor-card);
 }
 
 .rodape-container {
@@ -1088,7 +1089,7 @@ header.cabecalho-principal form[role="search"] button {
 }
 
 .rodape-copyright {
-    background-color: var(--cor-card);
+    background-color: #EEC994;
     padding: 1.25rem;
     text-align: center;
 }
@@ -1104,4 +1105,45 @@ header.cabecalho-principal form[role="search"] button {
 .rodape-copyright a {
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+/* ==========================================
+ * NAVEGAÇÃO ENTRE PÁGINAS (menu + rodapé)
+ * ========================================== */
+header.cabecalho-principal nav a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.rodape-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.rodape-links h2 {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    margin-bottom: 0.75rem;
+}
+
+.rodape-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rodape-links a {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.rodape-links a:hover,
+.rodape-links a:focus-visible,
+.rodape-links a[aria-current="page"] {
+    font-weight: 700;
 }

@@ -28,7 +28,8 @@
     <!-- ========================================== -->
     <header class="cabecalho-principal">
         <a href="../index.html" class="logo">
-            <img src="../imagens/logo.png" alt="Logo da Feira de Quebrada">
+            <img src="../imagens/logo.png" alt="Logo da Feira de Quebrada" class="logo-normal">
+            <img src="../imagens/logo-branca.png" alt="" aria-hidden="true" class="logo-branca">
         </a>
 
         <button id="btn-menu-mobile" class="btn-menu-mobile" aria-label="Abrir menu">☰</button>
@@ -53,7 +54,7 @@
                             <li><a href="filtro.html?categoria=tatuagem">Tatuagem</a></li>
                         </ul>
                     </li>
-                    <li><a href="../index.html#sobre">Sobre</a></li>
+                    <li><a href="sobre.html" aria-current="page">Sobre</a></li>
                 </ul>
             </nav>
 
@@ -283,11 +284,20 @@
                     </ul>
                 </nav>
             </div>
+
+            <nav class="rodape-links" aria-label="Páginas do site">
+                <h2>Páginas</h2>
+                <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="sobre.html" aria-current="page">Sobre nós</a></li>
+                        <li><a href="privacidade.html">Privacidade e Termos</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="rodape-copyright">
             <p>
-                <small>&copy; 2026 Feira de Quebrada. Todos os direitos reservados. &middot; <a href="privacidade.html">Privacidade e Termos</a></small>
+                <small>&copy; 2026 Feira de Quebrada. Todos os direitos reservados.</small>
             </p>
         </div>
     </footer>
