@@ -1,60 +1,68 @@
-# Feira de Quebrada
+# Feira da Quebrada 🪁
 
-> Plataforma que conecta moradores aos comércios e serviços locais do seu bairro.
+> Plataforma que conecta moradores aos comércios e serviços locais da sua quebrada.
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
+🔗 **Site:** [www.feiradequebrada.com.br](https://www.feiradequebrada.com.br)
+
 ---
 
 ## Sobre o projeto
 
-**Feira de Quebrada** é uma plataforma pensada para dar visibilidade a pequenos empreendedores, valorizando o comércio local e aproximando moradores dos produtos e serviços produzidos dentro da própria comunidade.
+A **Feira da Quebrada** dá visibilidade a pequenos empreendedores e aproxima moradores dos produtos e serviços da própria comunidade. Funciona como uma **vitrine**: divulga os negócios e o contato acontece direto pelas redes sociais do empreendedor. O site não realiza vendas nem agendamentos.
 
-Este projeto foi desenvolvido pelos estudantes da turma **SP09** durante o curso de **Front End do Instituto Proa**, em parceria com a **Serasa Experian**.
+**Principais recursos**
 
-Este repositório contém a **página inicial** do produto: header com busca e autenticação, carrossel de destaque, vitrine de profissionais, categorias populares, seção institucional e um espaço reservado para a futura integração com mapa interativo.
+- Busca por nome do comércio, serviço ou produto
+- Filtros por região e categoria
+- Perfil do empreendedor com serviços e redes sociais
+- Mapa por região, sem expor o endereço exato (privacidade para quem trabalha em casa)
 
-> Este é o README da primeira versão do projeto. Novas páginas, funcionalidades e documentação serão adicionadas conforme o desenvolvimento avança.
+Projeto desenvolvido pelos estudantes da turma **SP09** no curso de **Front End do Instituto Proa**, em parceria com a **Serasa Experian**, alinhado à **ODS 8 (meta 8.3)**.
+
+Este repositório contém a **página inicial**: header com busca e autenticação, carrossel de destaque, vitrine de profissionais, categorias populares, seção institucional e espaço reservado para o futuro mapa interativo. Novas páginas e funcionalidades serão adicionadas conforme o projeto avança.
 
 ---
 
 ## Tecnologias
 
-O projeto foi construído com tecnologias web puras, sem frameworks ou bibliotecas externas:
+Front-end com tecnologias web puras, sem frameworks:
 
-- **HTML5** — marcação semântica (`header`, `nav`, `main`, `section`, `article`, `footer`, `search`)
-- **CSS3** — variáveis nativas (`:root`), Grid e Flexbox, aninhamento nativo (`&`), `prefers-reduced-motion` e `:focus-visible` para acessibilidade
-- **JavaScript (Vanilla)** — carrossel do hero e comportamento do header, sem dependências
+- **HTML5**: marcação semântica (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- **CSS3**: variáveis nativas, Grid, Flexbox e aninhamento nativo
+- **JavaScript (Vanilla)**: carrossel do hero e comportamento do header
+- **Firebase**: backend previsto para cadastro e dados dos empreendedores
 
 ---
 
 ## Como rodar localmente
 
-Por ser um projeto estático (HTML, CSS e JS puros), não há build nem instalação de pacotes.
+Não há build nem instalação de pacotes.
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/<seu-usuario>/feira-de-quebrada.git
-   ```
-2. Entre na pasta do projeto:
-   ```bash
-   cd feira-de-quebrada
-   ```
-3. Abra o arquivo `inicio.html` diretamente no navegador, **ou** sirva a pasta com um servidor local (recomendado, evita problemas de path relativo):
-   ```bash
-   npx serve .
-   ```
-   ou, com a extensão **Live Server** do VS Code, clique em "Go Live" sobre o `inicio.html`.
+```bash
+git clone https://github.com/feiradaquebrada/nosso-site.git
+cd nosso-site
+```
+
+Abra o `inicio.html` no navegador ou, de preferência, use um servidor local:
+
+```bash
+npx serve .
+```
+
+Também funciona com a extensão **Live Server** do VS Code ("Go Live" sobre o `inicio.html`).
 
 ### Estrutura de pastas
 
 ```
-feira-de-quebrada/
+nosso-site/
 ├── inicio.html
-├── styleinicio.css
+├── styles/
+│   └── styleinicio.css
 ├── inicio.js
 ├── logo.png
 ├── icones/
@@ -65,21 +73,35 @@ feira-de-quebrada/
 
 ## Acessibilidade
 
-Acessibilidade foi tratada como parte do desenvolvimento, não como um ajuste posterior:
-
 - Marcação semântica e hierarquia de headings consistente
-- Textos alternativos descritivos em todas as imagens de conteúdo; imagens decorativas marcadas com `alt=""` e `aria-hidden`
-- Indicador de foco visível (`:focus-visible`) em links, botões e campos de formulário
-- Suporte a `prefers-reduced-motion`, desativando animações e rolagem suave para quem tem essa preferência ativada no sistema
-- Carrossel do hero com região identificada (`role="region"`), rótulos por slide e botão de pausa/retomada — a troca automática também respeita a preferência por movimento reduzido e é suspensa quando a aba está em segundo plano
+- Textos alternativos nas imagens; decorativas com `alt=""` e `aria-hidden`
+- Indicador de foco visível (`:focus-visible`)
+- Suporte a `prefers-reduced-motion`
+- Carrossel com região identificada, rótulos por slide e botão de pausa/retomada
 
-Ainda há espaço para evoluir (por exemplo, testes com leitores de tela reais e navegação por teclado ponta a ponta), e isso segue como parte do roadmap do projeto.
+Próximo passo: testes com leitores de tela reais e navegação por teclado ponta a ponta.
+
+---
+
+## Privacidade (LGPD)
+
+Coletamos apenas os dados essenciais para cadastro e funcionamento da plataforma, e o mapa mostra só a região do negócio.
 
 ---
 
 ## Contato
 
-Projeto desenvolvido pela turma **SP09** — Instituto Proa × Serasa Experian.
+Turma **SP09**: Instituto Proa × Serasa Experian.
 
 - 📷 Instagram: [@feiradaquebrada](https://www.instagram.com/feiradaquebrada)
 - ✉️ E-mail: [feiradaquebrada@gmail.com](mailto:feiradaquebrada@gmail.com)
+
+## Integrantes
+
+- Adrielly Rodrigues (P.O. & Dev)
+- Ana Luisa Sousa ( UI Designer e Front-End)
+- Brenda Souza (Pesquisa e Q.A)
+- Elias Rodrigues (Tech Lead e Dev)
+- Kathlyn (Dev)
+- Muryel Nascimento (Scrum M. e Dev)
+- Nathalie (UX Design e Dev)
