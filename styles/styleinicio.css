@@ -692,44 +692,82 @@ header.cabecalho-principal form[role="search"] button {
 .categorias-container {
     max-width: var(--largura-maxima-conteudo);
     margin: 0 auto;
+    padding: 3.5rem 3.5rem; /* Espaçamento interno para afastar os cards e o texto das bordas */
+    border-radius: 24px; /* Cantos arredondados do bloco principal */
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2.5rem;
-    align-items: start;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: center; /* Centraliza o texto da esquerda verticalmente com os cards */
     background-color: var(--cor-secao);
 }
 
+.categorias-subtitulo {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--cor-fundo-creme); /* Cor clara igual ao print do protótipo (troque por var(--cor-texto) com opacity: 0.6 se quiser mais contraste) */
+    margin-bottom: 0.5rem;
+}
+
 .categorias-cabecalho h2 {
-    font-size: 1.85rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: var(--cor-texto);
 }
 
 .categorias-cabecalho p {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.35;
+    max-width: 230px; /* Faz o texto quebrar em 4 linhas como no layout */
     color: var(--cor-texto);
+    opacity: 0.75;
 }
 
 .categorias-lista {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .categoria-card a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     background-color: var(--cor-card);
-    padding: 1.75rem 1rem;
-    border-radius: var(--raio-borda-padrao);
+    padding: 2rem 1rem;
+    aspect-ratio: 1 / 0.92; /* Deixa os cards mais quadrados e uniformes */
+    border-radius: 10px; /* Arredondamento suave dos cards internos */
+    text-decoration: none !important; /* Remove o sublinhado indesejado */
     transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
 }
 
-.categoria-card img { margin-bottom: 0.85rem; }
-.categoria-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
-.categoria-card span { font-size: 0.8rem; color: var(--cor-texto); opacity: 0.65; }
+.categoria-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.categoria-card h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cor-texto);
+    opacity: 0.8;
+    margin-bottom: 0.2rem;
+    text-decoration: none !important;
+}
+
+.categoria-card span {
+    font-size: 0.75rem;
+    color: var(--cor-texto);
+    opacity: 0.65;
+    text-decoration: none !important;
+}
 
 .categoria-card a:hover {
     transform: translateY(-4px);
@@ -737,9 +775,25 @@ header.cabecalho-principal form[role="search"] button {
 }
 
 @media (max-width: 900px) {
-    .categorias-container { grid-template-columns: 1fr; }
-    .categorias-lista { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* Grid 2x2 no mobile */
-    .categoria-card a { padding: 1.25rem 0.5rem; }
+    .secao-categorias {
+        padding: 3rem 1.25rem;
+    }
+    .categorias-container {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+    .categorias-cabecalho p {
+        max-width: 100%;
+    }
+    .categorias-lista {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .categoria-card a {
+        padding: 1.5rem 0.75rem;
+        aspect-ratio: auto;
+    }
 }
 
 /* ==========================================

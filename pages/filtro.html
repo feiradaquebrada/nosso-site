@@ -19,9 +19,62 @@
     <!-- ESTILOS (CSS)                              -->
     <!-- ========================================== -->
     
+    <link rel="stylesheet" href="../styles/styleinicio.css">
     <link rel="stylesheet" href="../styles/filtro.css">
+
+    <!-- Menu, dropdown de categorias e header escuro ao rolar -->
+    <script src="../scripts/sobre.js" defer></script>
 </head>
 <body>
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO PRINCIPAL                        -->
+    <!-- ========================================== -->
+    <header class="cabecalho-principal">
+        <a href="../index.html" class="logo">
+            <img src="../imagens/logo.png" alt="Logo da Feira de Quebrada" class="logo-normal">
+            <img src="../imagens/logo-branca.png" alt="" aria-hidden="true" class="logo-branca">
+        </a>
+
+        <button id="btn-menu-mobile" class="btn-menu-mobile" aria-label="Abrir menu">☰</button>
+        <div id="overlay-menu" class="overlay-menu"></div>
+
+        <div id="menu-colapsavel" class="menu-colapsavel">
+            <button id="btn-fechar-menu" class="btn-fechar-menu" aria-label="Fechar menu">✕</button>
+
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li class="menu-dropdown">
+                        <a href="#" id="btn-categorias" aria-expanded="false" aria-controls="lista-categorias">Categorias ▾</a>
+                        <ul id="lista-categorias" class="dropdown-balao escondido">
+                            <li><a href="filtro.html?categoria=alimentacao">Alimentação</a></li>
+                            <li><a href="filtro.html?categoria=artesanato">Arte e Artesanato</a></li>
+                            <li><a href="filtro.html?categoria=beleza">Beleza e Cuidados</a></li>
+                            <li><a href="filtro.html?categoria=servico-tecnico">Serviços</a></li>
+                            <li><a href="filtro.html?categoria=costura">Moda e Costura</a></li>
+                            <li><a href="filtro.html?categoria=festas">Festas</a></li>
+                            <li><a href="filtro.html?categoria=fretes">Fretes</a></li>
+                            <li><a href="filtro.html?categoria=tatuagem">Tatuagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <search>
+                <form role="search" action="filtro.html" method="get">
+                    <input type="search" name="busca" placeholder="O que busca?" aria-label="Buscar produtos ou serviços">
+                    <button type="submit">Buscar</button>
+                </form>
+            </search>
+
+            <nav class="auth-acoes" aria-label="Acesso à conta" id="containerAuth">
+                <a href="cadastro.html" class="btn-link">Cadastro</a>
+                <a href="login.html" class="btn-link">Login</a>
+            </nav>
+        </div>
+    </header>
     
     <!-- ========================================== -->
     <!-- CONTEÚDO PRINCIPAL (LAYOUT DIVIDIDO)       -->
@@ -113,7 +166,6 @@
         </div>
     </div>
 
-</body>
 
     <!-- ========================================== -->
     <!-- SCRIPTS (JS)                               -->
@@ -154,3 +206,5 @@
     }
     
 </style>
+</body>
+</html>

@@ -102,6 +102,12 @@ if (buscaUrl && campoBusca) {
     campoBusca.value = buscaUrl.trim().slice(0, 100);
 }
 
+// Mantém o termo pesquisado também no campo de busca do header
+let campoBuscaHeader = document.querySelector('header.cabecalho-principal input[type="search"]');
+if (buscaUrl && campoBuscaHeader) {
+    campoBuscaHeader.value = buscaUrl.trim().slice(0, 100);
+}
+
 function carregarFavoritosSalvos() {
     return JSON.parse(localStorage.getItem("comerciosFavoritos") || "[]");
 }
