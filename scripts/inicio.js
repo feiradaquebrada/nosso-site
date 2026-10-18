@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // respeita a preferência do sistema por movimento reduzido (prefers-reduced-motion), 
 // e suspende a troca automática quando a aba do navegador está em segundo plano.
 (function () {
-    const INTERVALO_SLIDE_MS = 10000;
+    const INTERVALO_SLIDE_MS = 5000;
 
     const container = document.querySelector('.carrossel-slides');
     const slides = document.querySelectorAll('.carrossel-slides .slide');

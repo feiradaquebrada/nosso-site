@@ -153,6 +153,10 @@ header.cabecalho-principal.header-escuro input:focus-visible {
     object-fit: contain;
 }
 
+.logo .logo-branca { display: none; }
+header.cabecalho-principal.header-escuro .logo .logo-normal { display: none; }
+header.cabecalho-principal.header-escuro .logo .logo-branca { display: block; }
+
 header.cabecalho-principal nav ul {
     display: flex;
     gap: 1.5rem;
