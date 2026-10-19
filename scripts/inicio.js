@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 /* =======================================================================
- * MENU SANDUÍCHE LATERAL (OFF-CANVAS) - ATUALIZADO
+ * MENU SANDUÍCHE LATERAL (OFF-CANVAS)
  * ======================================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {

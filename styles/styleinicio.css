@@ -917,7 +917,6 @@ header.cabecalho-principal form[role="search"] button {
     font-weight: 400;
 }
 
-/* ATUALIZAÇÃO PARA DESIGN DO FIGMA (GRELHA 2x2 NO MOBILE) */
 @media (max-width: 768px) {
     .dados {
         display: grid;
