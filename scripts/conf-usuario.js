@@ -75,7 +75,7 @@ if (btnSairConta) {
     if (confirm("Deseja realmente sair da conta?")) {
       try {
         await signOut(auth);
-        window.location.href = 'inicio.html';
+        window.location.href = '../index.html';
       } catch (error) {
         console.error("Erro ao terminar sessão:", error);
         alert("Erro ao sair da conta: " + error.message);
