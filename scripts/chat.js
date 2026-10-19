@@ -1,19 +1,16 @@
-/* =======================================================================
- * PERSONA FEY: CLASSE E LÓGICA DE RESPOSTAS
- * ======================================================================= */
+
 class PersonaJessica {
     constructor() {
         this.nomeUsuario = "";
         this.esperandoNome = true;
 
-        // Banco de intenções e respostas baseadas em Expressões Regulares (Regex)
         this.respostas = [
             { 
                 match: /\b(oi|olá|ola|hi|hello|salve|eai|eaí|boa tarde|bom dia|boa noite|oii)\b/i, 
                 reply: (n) => `Oii, ${n}! Tudo bem? 👋 Como posso te ajudar hoje na Feira da Quebrada?` 
             },
             { 
-                match: /\b(tchau|valeu|até mais|ate mais|obrigado|obrigada|flw|tmj)\b/i, 
+                match: /\b(tchau|valeu|até mais|ate mais|obrigado|obrigada|flw|tmj|obg)\b/i, 
                 reply: (n) => `Imagina, ${n}! Qualquer dúvida é só chamar por aqui. Tmj! ✨` 
             },
             { 
@@ -21,24 +18,28 @@ class PersonaJessica {
                 reply: (n) => `A gente atende várias regiões! Você pode dar uma olhada na lista lateral ou navegar direto nos círculos pelo mapa, ${n}.` 
             },
             { 
-                match: /\b(gratis|grátis|taxa|quanto custa|pago|pagar|cobram)\b/i, 
-                reply: (n) => `É 100% gratuito, ${n}! Não cobramos nenhuma taxa de quem compra e nem de quem vende.` 
+                match: /\b(gratis|grátis|taxa|quanto custa|pago|pagar|cobram|comissao|comissão|porcentagem)\b/i, 
+                reply: (n) => `Sim, é 100% gratuito, ${n}! 💚\n\n🛍️ Para quem compra: Não cobramos nenhuma taxa para navegar, encontrar os comércios ou falar com os vendedores.\n\n💼 Para quem vende: Você cria sua vitrine e divulga seus produtos sem pagar nada e sem taxa de comissão sobre as suas vendas. Todo o lucro vai direto para você!` 
             },
             { 
                 match: /\b(cadastrar|cadastro|criar conta|novo usuario|nova conta)\b/i,
-                reply: (n) => `Para se cadastrar é bem tranquilo, ${n}:\n\n1. Clica em 'Cadastre-se' no menu;\n2. Escolha 'Empreendedor';\n3. Preencha seus dados e adicione fotos dos seus produtos!` 
+                reply: (n) => `Para se cadastrar é bem tranquilo, ${n}:\n\n1. Clica em Cadastre-se no menu;\n2. Escolha Empreendedor ou Cliente;\n3. Preencha com seus dados!` 
             },
             { 
-                match: /\b(golpe|fraude|falso|fake|link|whatsapp|zap|contato|chave pix|pix)\b/i, 
-                reply: (n) => `Dicas importantes de segurança, ${n}:\n\n1. Use sempre o botão oficial 'Chamar no WhatsApp' na página do vendedor;\n2. Desconfie de mensagens de números estranhos se dizendo representantes do site;\n3. A Feira da Quebrada não faz cobranças nem solicita Pix via chat!` 
+                match: /\b(golpe|fraude|falso|fake|link|whatsapp|zap|seguranca|segurança|pix|codigo|código|sms|taxa|cobranca|cobrança)\b/i, 
+                reply: (n) => `⚠️ Alertas e Dicas de Segurança na Feira da Quebrada, ${n}:\n\n🛡️ Para os Clientes:\n1. Use sempre o botão oficial 'Chamar no WhatsApp' na página do vendedor;\n2. Desconfie de preços excessivamente baixos ou exigência de pagamentos antecipados sem conhecer o comerciante;\n3. Combine a entrega e a forma de pagamento diretamente com o vendedor de forma segura.\n\n💼 **Para os Empreendedores:**\n1. A Feira da Quebrada **NUNCA** pede senhas, códigos de SMS ou confirmação do seu WhatsApp;\n2. **Zero cobranças:** Não cobramos taxas, mensalidades ou comissões. Se alguém pedir Pix em nosso nome, é golpe!\n3. Desconfie de supostos "suportes" ou contatos estranhos oferecendo serviços pagos para ativar sua conta.` 
             },
             { 
-                match: /\b(e seguro|é seguro|é seguro?|segurança|seguranca|confiavel|risco|garantia|confiar)\b/i, 
+                match: /\b(e seguro|seguro|é seguro|é seguro?|segurança|seguranca|confiavel|risco|garantia|confiar)\b/i, 
                 reply: (n) => `É seguro sim, ${n}! Mas recomendo sempre combinar certinho os detalhes e evitar pagamentos antecipados sem conhecer o vendedor.` 
             },
             { 
                 match: /\b(entrega|entregas|entrega|frete|entregam|entregar|envio|enviar)\b/i, 
                 reply: (n) => `Sobre as entregas, ${n}:\n\nA Feira da Quebrada conecta você direto ao vendedor! A forma de envio ou retirada (em mãos, motoboy, etc.) é combinada diretamente entre vocês pelo WhatsApp.` 
+            },
+            { 
+                match: /\b(pagamento|pagar|forma de pagamento|cartao|cartão|dinheiro|aceita pix)\b/i, 
+                reply: (n) => `As formas de pagamento são combinadas direto com o empreendedor, ${n}! Geralmente aceitam Pix, dinheiro e cartão.` 
             },
             { 
                 match: /\b(editar|mudar|alterar|atualizar|foto|produto|produtos|anuncio|anúncio)\b/i, 
@@ -65,6 +66,10 @@ class PersonaJessica {
                 reply: (n) => `Se notar algum perfil estranho ou atitude suspeita, envie uma mensagem para o nosso suporte pelo formulário 'Fale Conosco', ${n}!` 
             },
             { 
+                match: /\b(editar|mudar|alterar|atualizar|foto|produto|produtos|anuncio|anúncio)\b/i, 
+                reply: (n) => `Para atualizar seus produtos ou informações, ${n}:\n\n1. Faça login na sua conta;\n2. Vá no seu 'Painel do Empreendedor';\n3. Clique em 'Meus Produtos' para editar fotos, descrições.` 
+            },
+            { 
                 match: /\b(esqueci senha|recuperar senha|mudar senha|trocar senha|senha)\b/i, 
                 reply: (n) => `Para recuperar seu acesso, ${n}:\n\n1. Vá na tela de Login;\n2. Clique em 'Esqueci minha senha';\n3. Digite seu e-mail e o codigo de segurança e a nova senha.` 
             },
@@ -74,7 +79,7 @@ class PersonaJessica {
             },
             { 
                 match: /\b(excluir|deletar|apagar conta|apagar loja|cancelar cadastro)\b/i, 
-                reply: (n) => `Você tem total controle sobre seus dados, ${n}! É possível ocultar ou excluir seu perfil comercial diretamente nas configurações do seu Painel.` 
+                reply: (n) => `Você tem total controle sobre seus dados, ${n}! É possível excluir seu perfil diretamente nas configurações.` 
             },
             { 
                 match: /\b(comissao|comissão|porcentagem|taxa de venda|cobram porcentagem)\b/i, 
@@ -101,21 +106,24 @@ class PersonaJessica {
                 reply: (n) => `Use o nosso Mapa Interativo, ${n}! Ele mostra os pinos de localização de cada comércio para você encontrar os serviços mais próximos de você.` 
             },
             { 
-                match: /\b(precisa cadastrar para comprar|criar conta para comprar)\b/i, 
-                reply: (n) => `Sim precisa de cadastro para Visualizar os empreendedores, ${n}! Você pode navegar livremente pelo site e chamar os comerciantes no WhatsApp.` 
-            },
-            { 
                 match: /\b(app|aplicativo|baixar|play store|app store|instalar)\b/i, 
                 reply: (n) => `Não precisa baixar nada, ${n}! A Feira da Quebrada funciona direto no navegador do seu celular ou computador de forma leve e rápida.` 
             },
+            {
+                match: /\b(quem é a fey|quem e a fey|quem é você|fey|assistente virtual)\b/i,
+                reply: (n) => `Eu sou a Fey, a assistente virtual! Estou aqui para te ajudar a navegar pela plataforma, ${n}!`
+            },
             { 
-                match: /\b(acessibilidade|leitor de tela|contraste|escuro|modo escuro)\b/i, 
-                reply: (n) => `Estamos trabalhando para implementar opções de alto contraste e melhorias para leitores de tela em breve, ${n}!` 
-            }
+                match: /\b(duvida|duvidas|sugestao|sugestões|perguntar|o que posso perguntar|exemplos|ajuda)\b/i, 
+                reply: (n) => `Você pode me perguntar várias coisas, ${n}!\n\nTente por exemplo:\n• "Como me cadastrar?"\n• "Quais comércios tem na região?"\n• "É gratuito para anunciar?"\n• "Como edito meus produtos?"` 
+            },
+            { 
+                match: /\b(horario de funcionamento|que horas abre|horarios|funcionamento)\b/i, 
+                reply: (n) => `Cada comerciante define seus próprios horários de atendimento, ${n}! Você pode conferir os horários direto nos cards ou clicando em "Ver detalhes" em cada perfil.` 
+            },
         ];
     }
 
-    // Processa a mensagem do usuário e devolve a resposta adequada
     responder(mensagem) {
         const texto = mensagem.trim();
 
@@ -124,7 +132,7 @@ class PersonaJessica {
             this.nomeUsuario = primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1).toLowerCase();
             this.esperandoNome = false;
 
-            return `Prazer, ${this.nomeUsuario}! Como posso te ajudar? Pode me perguntar sobre como se cadastrar, se o site é gratuito ou sobre segurança!`;
+            return `Prazer, ${this.nomeUsuario}! Como posso te ajudar? Pode me perguntar sobre como se cadastrar, se o site é gratis ou sobre segurança!`;
         }
 
         for (const item of this.respostas) {
@@ -133,16 +141,11 @@ class PersonaJessica {
             }
         }
 
-        return `Poxa, ${this.nomeUsuario}, não entendi muito bem. Tenta me perguntar de forma mais direta, tipo "Como me cadastrar?", "É gratuito?" ou "É seguro?".`;
+        return `Poxa, ${this.nomeUsuario}, não entendi muito bem. Tenta me perguntar de forma mais direta, tipo "Como me cadastrar?", "É gratis?" ou "É seguro?".`;
     }
 }
 
-/* =======================================================================
- * CONTROLE DA INTERFACE (DOM) DO CHAT WIDGET
- * ======================================================================= */
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Mapeamento de elementos
     const chatToggle = document.getElementById('chatToggle');
     const chatWidget = document.getElementById('chatWidget');
     const closeChat = document.getElementById('closeChat');
@@ -150,10 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBox = document.getElementById('chatBox');
     const submitBtn = document.getElementById('submitBtn');
 
-    // Instanciação da assistente
     const jessica = new PersonaJessica();
 
-    // Função para renderizar as mensagens na tela
     function adicionarBolha(papel, texto) {
         if (!chatBox) return;
         const bolha = document.createElement('div');
@@ -163,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatBox.scrollTop = chatBox.scrollHeight;
     }
 
-    // Função para exibir o indicador de 'digitando...'
     function mostrarDigitando() {
         const indicador = document.createElement('div');
         indicador.classList.add('bubble', 'assistant', 'typing-dots');
@@ -172,13 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
         chatBox.scrollTop = chatBox.scrollHeight;
         return indicador;
     }
-
     // Inicializa a primeira mensagem caso o chat esteja vazio
     if (chatBox && chatBox.children.length === 0) {
         adicionarBolha('assistant', 'Olá! Sou a Fey, assistente virtual da Feira da Quebrada.\n\nAntes de começarmos, qual é o seu nome?');
     }
 
-    // Eventos de Abertura/Fechamento do Chat
+        // Eventos de Abertura/Fechamento do Chat
     if (chatToggle && chatWidget) {
         chatToggle.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -196,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
             chatWidget.classList.add('hidden');
         });
     }
-
     // Lógica de Envio de Mensagem
     function enviarMensagem() {
         if (!messageInput) return;
@@ -209,13 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const indicador = mostrarDigitando();
         const resposta = jessica.responder(texto);
 
-        // Simula o tempo de digitação (700ms)
+                // Simula o tempo de digitação (700ms)
         setTimeout(() => {
             if (indicador) indicador.remove();
             adicionarBolha('assistant', resposta);
         }, 700);
     }
-
     // Eventos de Input (Click e Enter)
     if (submitBtn) submitBtn.addEventListener('click', enviarMensagem);
 
@@ -227,33 +224,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+const helpTooltip = document.getElementById('chatHelpTooltip');
+const chatWidgetRef = document.getElementById('chatWidget');
 
-    /* =======================================================================
-     * CONTROLE DO TOOLTIP (BALÃO DE AJUDA)
-     * ======================================================================= */
-    const helpTooltip = document.getElementById('chatHelpTooltip');
-    const chatWidgetRef = document.getElementById('chatWidget');
+function exibirNotificacaoAjuda() {
+    if (helpTooltip && chatWidgetRef && chatWidgetRef.classList.contains('hidden')) {
+        helpTooltip.classList.add('show');
 
-    function exibirNotificacaoAjuda() {
-        if (helpTooltip && chatWidgetRef && chatWidgetRef.classList.contains('hidden')) {
-            helpTooltip.classList.add('show');
-
-            setTimeout(() => {
-                helpTooltip.classList.remove('show');
-            }, 6000); // Exibe por 6 segundos
-        }
+        setTimeout(() => {
+            helpTooltip.classList.remove('show');
+        }, 6000);
     }
+}
 
-    // Exibe a notificação 5 segundos após a página carregar
-    setTimeout(exibirNotificacaoAjuda, 5000);
+// 5 segundos da página carregar
+setTimeout(exibirNotificacaoAjuda, 5000);
 
-    // Reexibe a notificação a cada 2 minutos caso o chat esteja fechado
-    setInterval(exibirNotificacaoAjuda, 120000);
+// aviso a cada 2 minutos 
+setInterval(exibirNotificacaoAjuda, 120000);
 
-    // Oculta o tooltip permanentemente se o usuário clicar para abrir o chat
-    if (chatToggle) {
-        chatToggle.addEventListener('click', () => {
-            if (helpTooltip) helpTooltip.classList.remove('show');
-        });
-    }
+if (chatToggle) {
+    chatToggle.addEventListener('click', () => {
+        if (helpTooltip) helpTooltip.classList.remove('show');
+    });
+}
 });

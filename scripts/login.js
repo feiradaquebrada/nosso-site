@@ -36,9 +36,9 @@ if (formLogin) {
             }
 
             if (temComercio) {
-                window.location.href = "../styles/painel.html";
+                window.location.href = "../pages/painel.html";
             } else {
-                window.location.href = "../styles/inicio.html";
+                window.location.href = "../index.html";
             }
 
         } catch (error) {
