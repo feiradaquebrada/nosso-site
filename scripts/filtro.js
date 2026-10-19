@@ -199,7 +199,7 @@ function exibirCards(comercios) {
         
         if (!nome || nome.trim() === "" || nome === "-") return;
 
-        let fotoPrincipal = BASE + "imagens/trancista.png";
+        let fotoPrincipal = BASE + "imagens/Semfoto.jpeg";
         if (comercio.logo && comercio.logo.trim() !== "" && comercio.logo !== "-") {
             fotoPrincipal = comercio.logo;
         } else if (comercio.fotoUrl && comercio.fotoUrl.trim() !== "" && comercio.fotoUrl !== "-") {
